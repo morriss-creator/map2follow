@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Map2follow – Illustrierte Parkpläne für Freizeitparks und Attraktionsbetriebe</title>
+<meta name="description" content="Map2follow gestaltet illustrierte Parkpläne für Freizeitparks und Attraktionsbetriebe: farbig, übersichtlich, in saisonalen Versionen und mehreren Sprachen. Jetzt unverbindlich eine Offerte anfragen.">
+<!-- Domain: www.map2follow.ch (noch nicht registriert) -->
+<link rel="canonical" href="https://www.map2follow.ch/">
+<meta name="theme-color" content="#f3f8f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a1b20" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_CH">
+<meta property="og:site_name" content="Map2follow">
+<meta property="og:title" content="Map2follow – Parkpläne, die Gäste gern in die Hand nehmen">
+<meta property="og:description" content="Illustrierte Parkpläne für Freizeitparks und Attraktionsbetriebe – farbig, übersichtlich und für alle vier Jahreszeiten.">
+<meta property="og:url" content="https://www.map2follow.ch/">
+<meta property="og:image" content="https://www.map2follow.ch/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Illustrierter Beispielplan eines Freizeitparks mit See, Bahnen und Attraktionen">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23ff5a3c'/%3E%3Cpath d='M7 21 C11 9 15 23 19 12 S25 14 25 14' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-dasharray='1 5'/%3E%3Ccircle cx='25' cy='14' r='3' fill='%23ffc43d'/%3E%3C/svg%3E">
+<link rel="preload" href="fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Map2follow","url":"https://www.map2follow.ch/","email":"map2follow@gmail.com","telephone":"+41772329394","description":"Illustrierte Parkpläne für Freizeitparks und Attraktionsbetriebe"}</script>
+<style>
+/* Schriften lokal eingebunden (keine Verbindung zu Google, schneller und datenschutzfreundlich) */
+@font-face{font-family:"Familjen Grotesk";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/familjen-grotesk-latin.woff2) format("woff2")}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/instrument-sans-latin.woff2) format("woff2")}
+/* Layout: ruhige Seite mit einer grossen, bunten Demo-Karte als Mittelpunkt. */
+:root{--bg:#f3f8f6;--panel:#ffffff;--ink:#0d2b33;--mute:#526a71;--line:#d6e5e1;--accent:#ff5a3c;--accent-btn:#d6401f;--accent-btn-hover:#b9361a;--accent-ink:#ffffff;--sun:#ffc43d;--teal:#0f7a86;
+--display:"Familjen Grotesk",system-ui,sans-serif;--body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+--land:#cdeeb4;--land2:#bfe6a3;--park:#8ad970;--park2:#7fd166;--rim:#37a05a;--lake:#62c9ee;--path:#ffe7a8;--pathrim:#e6b94f;--route:#ff4f6d;--tree1:#2e9a4d;--tree2:#46b562;--tree3:#f2a33a;
+color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1b20;--panel:#112a31;--ink:#e8f5f3;--mute:#a3c0c4;--line:#21404a;--teal:#4fc3cf;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1b20;--panel:#112a31;--ink:#e8f5f3;--mute:#a3c0c4;--line:#21404a;--teal:#4fc3cf;color-scheme:dark}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;padding-inline:max(20px,env(safe-area-inset-left,0px)) max(20px,env(safe-area-inset-right,0px))}
+img,svg{max-width:100%}
+a{color:inherit}
+p{margin:0}
+.w{max-width:1120px;margin-inline:auto}
+.skip{position:absolute;left:12px;top:-60px;z-index:10;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;padding-block:20px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-weight:700;font-size:23px;letter-spacing:-.02em;display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+.logo svg{width:30px;height:30px;flex:none}
+.site-header nav ul{display:flex;align-items:center;gap:6px 22px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+.site-header nav a{color:var(--mute);text-decoration:none;font-weight:500;font-size:15.5px;padding-block:6px;display:inline-block}
+.site-header nav a:hover{color:var(--ink)}
+.site-header nav a.nav-cta{color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:600}
+.site-header nav a.nav-cta:hover{background:var(--ink);color:var(--bg)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.025em;margin:0;text-wrap:balance}
+h1{font-size:clamp(40px,6.4vw,78px);font-weight:700;max-width:15ch}
+h2{font-size:clamp(30px,4vw,46px);font-weight:700}
+h3{font-size:21px;font-weight:700;line-height:1.2}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--mute);max-width:56ch;margin:20px 0 0;text-wrap:pretty}
+.hero{padding-block:40px 36px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:0;list-style:none;color:var(--mute);font-size:15.5px;font-weight:500}
+.facts li{display:flex;align-items:center;gap:8px}
+.facts li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--sun);flex:none}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;font:600 16.5px/1.2 var(--body);padding:12px 22px;border-radius:12px;border:2px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s,transform .15s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.pri{background:var(--accent-btn);border-color:var(--accent-btn);color:var(--accent-ink)}
+.btn.pri:hover{background:var(--accent-btn-hover);border-color:var(--accent-btn-hover);color:#fff}
+.btn:active{transform:translateY(1px)}
+a:focus-visible,button:focus-visible,.btn:focus-visible,.chip:focus-visible,textarea:focus-visible,input:focus-visible,.item:focus-visible,.mapbox:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+main>section{padding-block:56px;scroll-margin-top:16px}
+.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--teal);margin:0 0 12px}
+.demo{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:16px;margin-top:28px}
+.bar{display:flex;gap:10px 16px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:2px 2px 16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:600 14.5px var(--body);min-height:40px;padding:8px 15px;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}
+.mapbox{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#cdeeb4}
+svg.map{display:block;width:100%;height:auto}
+.pin{cursor:pointer}
+.pin .lab{font:700 12.5px var(--body);fill:#0d2b33;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round;text-anchor:middle}
+.pin .em{font-size:16px;text-anchor:middle;dominant-baseline:central}
+.pin.sel .ring{stroke:#0d2b33;stroke-width:4}.pin:hover .ring{stroke:#0d2b33}
+.side{display:flex;flex-direction:column;gap:10px;min-width:0}
+.info{border:1px solid var(--line);border-radius:16px;padding:14px 16px;min-height:112px}
+.info b{font-family:var(--display);font-size:20px;display:block;margin-bottom:4px}
+.info span{color:var(--mute);font-size:15.5px}
+.list{display:flex;flex-direction:column;gap:6px;max-height:330px;overflow:auto;padding:2px}
+.item{display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:12px;padding:9px 11px;min-height:44px;font:500 15px var(--body);cursor:pointer}
+.item:hover{border-color:var(--ink)}
+.item i{width:12px;height:12px;border-radius:50%;flex:none}
+.item[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.note{color:var(--mute);font-size:14.5px;margin:14px 4px 2px}
+.swipe{display:none;color:var(--mute);font-size:14px;margin:8px 4px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px 24px;margin:32px 0 0;padding:0;list-style:none}
+.card{border-top:3px solid var(--ink);padding-top:16px}
+.card p{margin:10px 0 0;color:var(--mute);font-size:16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:32px;counter-reset:s;padding:0;list-style:none}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sun);color:#0d2b33;font:700 18px var(--display);margin-bottom:12px}
+.steps p{margin:8px 0 0;color:var(--mute);font-size:16px}
+.section-cta{margin-top:34px}
+.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:clamp(24px,4.5vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:32px 44px}
+.contact h2{color:var(--bg)}
+.contact p{color:var(--bg);opacity:.85;margin-top:16px}
+@supports (color:color-mix(in srgb,red,blue)){.contact p{opacity:1;color:color-mix(in srgb,var(--bg) 82%,var(--ink))}}
+.contact-links{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
+.contact-links a{display:inline-flex;align-items:center;gap:12px;color:var(--bg);text-decoration:none;font-weight:600;font-size:17px;min-height:44px}
+.contact-links a:hover span:last-child{text-decoration:underline;text-underline-offset:3px}
+.contact-links .ic{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--bg) 14%,var(--ink));flex:none}
+.contact-links .ic svg{width:19px;height:19px}
+.contact-links small{display:block;font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.contact textarea,.contact input{width:100%;font:16px/1.5 var(--body);padding:12px 14px;border-radius:10px;border:2px solid transparent;background:var(--bg);color:var(--ink);margin-top:6px}
+.contact textarea{resize:vertical;min-height:120px}
+.contact label{font-size:14.5px;font-weight:600;display:block;margin-top:14px}
+.contact label:first-of-type{margin-top:0}
+.contact label .opt{font-weight:400;opacity:.75}
+.contact .btns{margin-top:18px}
+.contact .btn{border-color:var(--bg);color:var(--bg)}
+.contact .btn:hover{background:var(--bg);color:var(--ink)}
+.contact .btn.pri{border-color:var(--accent-btn);color:#fff}
+.contact .btn.pri:hover{background:var(--accent-btn-hover);border-color:var(--accent-btn-hover);color:#fff}
+.hint{font-size:14px;margin-top:12px;opacity:.85}
+.status{font-size:14.5px;margin-top:10px;min-height:22px;font-weight:600}
+.site-footer{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;padding-block:32px 44px;color:var(--mute);font-size:14.5px;border-top:1px solid var(--line);margin-top:24px}
+.site-footer ul{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0;padding:0;list-style:none}
+.site-footer a{color:var(--mute);text-underline-offset:3px}
+.site-footer a:hover{color:var(--ink)}
+@media (max-width:860px){.stage{grid-template-columns:minmax(0,1fr)}.list{max-height:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
+@media (max-width:600px){
+ body{font-size:16.5px}
+ .site-header{padding-block:16px 8px}
+ .site-header nav{width:100%}
+ .site-header nav ul{flex-wrap:nowrap;gap:14px;overflow-x:auto;scrollbar-width:none}
+ .site-header nav a{font-size:14.5px;white-space:nowrap}
+ .site-header nav a.nav-cta{padding:4px 12px}
+ .list{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+ .item{font-size:14px;gap:7px;padding:8px 9px}
+ .item i{width:10px;height:10px}
+ .hero{padding-block:24px 20px}
+ main>section{padding-block:40px}
+ .demo{padding:10px;border-radius:20px;margin-inline:-6px}
+ .bar{padding:2px 2px 12px}
+ .chip{font-size:14px;padding:7px 12px;min-height:38px}
+ .mapbox{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;border-radius:14px}
+ svg.map{width:680px;max-width:none}
+ .swipe{display:block}
+ .btns .btn{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<div class="w">
+<header class="site-header">
+  <a class="logo" href="#top" aria-label="Map2follow – zum Seitenanfang"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15" fill="#ff5a3c"/><path d="M7 21 C11 9 15 23 19 12 S25 14 25 14" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="1 5"/><circle cx="25" cy="14" r="3" fill="#ffc43d"/></svg>Map2follow</a>
+  <nav aria-label="Hauptnavigation"><ul><li><a href="#erkunden">Karte erkunden</a></li><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Ablauf</a></li><li><a class="nav-cta" href="#kontakt">Kontakt</a></li></ul></nav>
+</header>
+
+<main id="inhalt" tabindex="-1">
+<div class="hero">
+  <h1>Parkpläne, die Gäste gern in die Hand nehmen.</h1>
+  <p class="lead">Wir gestalten Pläne für Freizeitparks und Attraktionsbetriebe. Farbig, übersichtlich und so gebaut, dass sich Ihre Gäste vom Eingang bis zur letzten Attraktion zurechtfinden.</p>
+  <div class="btns"><a class="btn pri" href="#kontakt">Offerte anfragen</a><a class="btn" href="#erkunden">Beispielkarte erkunden</a></div>
+  <ul class="facts" aria-label="Auf einen Blick"><li>Unverbindliche Offerte</li><li>Vier Jahreszeiten</li><li>Mehrere Sprachen</li><li>Für Druck, Website und Bildschirm</li></ul>
+</div>
+
+<section id="erkunden" aria-labelledby="h-erkunden">
+  <p class="eyebrow">Zum Ausprobieren</p>
+  <h2 id="h-erkunden">Eine Karte, vier Jahreszeiten</h2>
+  <p class="lead">Wechseln Sie die Saison, filtern Sie nach Bahnen, Essen oder Service und tippen Sie auf einen Ort. So könnte Ihr Plan aussehen.</p>
+  <div class="demo">
+    <div class="bar">
+      <div class="chips" id="seasons" role="group" aria-label="Jahreszeit wählen"></div>
+      <div class="chips" id="cats" role="group" aria-label="Nach Kategorie filtern"></div>
+    </div>
+    <div class="stage">
+      <div>
+        <div class="mapbox" id="mapbox"><svg class="map" id="map" viewBox="0 0 800 520" role="img" aria-labelledby="map-title"><title id="map-title">Illustrierte Beispielkarte eines Freizeitparks mit See, Dampfbahn, Bergbahn, Seilbahn, Märchendorf und Riesenrad</title></svg></div>
+        <p class="swipe" aria-hidden="true">← Karte seitlich verschieben →</p>
+      </div>
+      <div class="side"><div class="info" id="info" aria-live="polite"></div><div class="list" id="list" role="group" aria-label="Orte im Beispielpark"></div></div>
+    </div>
+    <noscript><p class="note">Die interaktive Beispielkarte benötigt JavaScript.</p></noscript>
+    <p class="note">Beispielpark mit erfundenen Orten. Ihre Karte entsteht aus Ihrem Gelände, Ihren Attraktionen und Ihrem Auftritt.</p>
+  </div>
+</section>
+
+<section id="leistungen" aria-labelledby="h-leistungen">
+  <p class="eyebrow">Leistungen</p>
+  <h2 id="h-leistungen">Was wir für Ihren Park umsetzen</h2>
+  <ul class="cards">
+    <li class="card"><h3>Plan überarbeiten</h3><p>Ihr bestehender Plan wird moderner, klarer und einladender. Der Inhalt bleibt, der Eindruck ändert sich.</p></li>
+    <li class="card"><h3>Illustrierte Parkpläne</h3><p>Farbenfroh und detailreich, passend zur Welt Ihres Parks, mit gut lesbaren Beschriftungen und Legende.</p></li>
+    <li class="card"><h3>Saisonale Versionen</h3><p>Frühling, Sommer, Herbst und Winter. So bleibt Ihr Plan das ganze Jahr aktuell und stimmungsvoll.</p></li>
+    <li class="card"><h3>Individuelle Anpassungen</h3><p>Mehrere Sprachen, eigene Legenden sowie Formate für Druck, Website und Bildschirm.</p></li>
+  </ul>
+</section>
+
+<section id="ablauf" aria-labelledby="h-ablauf">
+  <p class="eyebrow">Ablauf</p>
+  <h2 id="h-ablauf">In drei Schritten zur Offerte</h2>
+  <ol class="steps">
+    <li><h3>Plan senden</h3><p>Zeigen Sie uns, was Sie verbessern oder neu haben möchten. Ein Screenshot oder Foto genügt.</p></li>
+    <li><h3>Offerte erhalten</h3><p>Wir prüfen Ihre Wünsche und unterbreiten Ihnen ein auf Sie zugeschnittenes Angebot.</p></li>
+    <li><h3>Umsetzung</h3><p>Nach Ihrer Freigabe gestalten wir den Plan und liefern ihn in den gewünschten Formaten.</p></li>
+  </ol>
+  <div class="section-cta"><a class="btn pri" href="#kontakt">Jetzt Plan senden</a></div>
+</section>
+
+<section id="kontakt" aria-labelledby="h-kontakt">
+  <div class="contact">
+    <div>
+      <h2 id="h-kontakt">Zeigen Sie uns Ihren Plan</h2>
+      <p>Die Anfrage ist unverbindlich. Beschreiben Sie kurz, was verbessert oder neu gemacht werden soll, und senden Sie uns den Text zusammen mit Ihrem aktuellen Plan per E-Mail.</p>
+      <ul class="contact-links">
+        <li><a href="mailto:map2follow@gmail.com?subject=Anfrage%20Parkplan"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><small>E-Mail</small>map2follow@gmail.com</span></a></li>
+        <li><a href="tel:+41772329394"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Telefon</small>+41 77 232 93 94</span></a></li>
+      </ul>
+    </div>
+    <form id="f" novalidate>
+      <label for="n">Name des Parks</label><input id="n" name="park" autocomplete="organization">
+      <label for="p">Ihr Name <span class="opt">(optional)</span></label><input id="p" name="name" autocomplete="name">
+      <label for="w">Ihre Wünsche</label><textarea id="w" name="wuensche" rows="4" placeholder="Zum Beispiel: Plan modernisieren, vier Jahreszeiten, zusätzlich auf Englisch"></textarea>
+      <div class="btns"><button class="btn pri" type="submit">E-Mail vorbereiten</button><button class="btn" type="button" id="copy">Text kopieren</button></div>
+      <p class="hint">Ihr E-Mail-Programm öffnet sich mit dem fertigen Text. Hängen Sie einfach Ihren aktuellen Plan an.</p>
+      <div class="status" id="st" role="status"></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <p>© <span id="yr">2026</span> Map2follow · Parkpläne für Freizeitparks und Attraktionsbetriebe</p>
+  <ul><li><a href="mailto:map2follow@gmail.com">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul>
+</footer>
+</div>
+
+<script>
+const SEAS={
+ fruehling:{n:"Frühling",v:{land:"#d9f3c6",land2:"#c8ecb0",park:"#a2e386",park2:"#94db79",side:"#3d9a58",rim:"#4bb86b",lake:"#79d4f0",lake2:"#3aa9de",tree1:"#4fb869",tree2:"#86d48c",tree3:"#f4a6c6",fl1:"#ff7aa8",fl2:"#ffd24a",snowroof:"0",ice:"0",lily:"1",sun:".22",sunc:"#fff6c0"},fx:{c:["#ffd1e3","#ffffff","#ffb7d1"],n:36,k:"petal"}},
+ sommer:{n:"Sommer",v:{land:"#c6ee9c",land2:"#b4e388",park:"#73d25c",park2:"#66c952",side:"#2c8f47",rim:"#2f9a4a",lake:"#44c6f2",lake2:"#1c8fd0",tree1:"#2a9a45",tree2:"#3fb55a",tree3:"#ffc43d",fl1:"#ff5a3c",fl2:"#ffd24a",snowroof:"0",ice:"0",lily:"1",sun:".42",sunc:"#fff0a0"},fx:{c:["#fff3a0"],n:14,k:"spark"}},
+ herbst:{n:"Herbst",v:{land:"#f2e2b4",land2:"#e8d29a",park:"#cdd86c",park2:"#bfce5e",side:"#9a6e28",rim:"#b3832f",lake:"#7bc0c9",lake2:"#3f93a6",tree1:"#e0662b",tree2:"#f0a030",tree3:"#b8321f",fl1:"#d9531e",fl2:"#f6b73c",snowroof:"0",ice:"0",lily:"0",sun:".3",sunc:"#ffd49a"},fx:{c:["#e0662b","#f0a030","#b8321f"],n:40,k:"leaf"}},
+ winter:{n:"Winter",v:{land:"#e9f2fb",land2:"#dce9f6",park:"#f8fbff",park2:"#e9f2fb",side:"#8fb0cf",rim:"#9bbad6",lake:"#b8dcf2",lake2:"#86bde0",tree1:"#2f7a58",tree2:"#3c8f6a",tree3:"#1f6a4a",fl1:"#ffffff",fl2:"#dff0ff",snowroof:"1",ice:".75",lily:"0",sun:"0",sunc:"#ffffff"},fx:{c:["#ffffff","#e6f3ff"],n:80,k:"snow"}}
+};
+const CATS={bahn:{n:"Bahnen",c:"#ff5a3c"},essen:{n:"Essen",c:"#f59a0c"},shop:{n:"Shop",c:"#9a5fe0"},service:{n:"Service",c:"#1f8fd6"},ort:{n:"Orte",c:"#1fb26b"}};
+const N={e:[430,400],j:[430,350],b:[405,268],c:[445,215],w:[330,300],v:[300,230],p:[330,130],i:[560,300],l:[640,330],x:[560,395],s:[230,350],k:[310,440]};
+const E=[["e","j"],["j","b"],["b","c"],["b","w"],["w","v"],["v","p"],["w","s"],["e","k"],["e","x"],["x","l"],["c","i"],["i","l"],["c","v"],["c","p"],["j","i"]];
+const P=[
+{id:"eingang",n:"Haupteingang",c:"service",ic:"🎟️",x:430,y:400,a:"e",d:"Tickets, Info und Start der Tour."},
+{id:"park",n:"Parkplatz",c:"service",ic:"🅿️",x:310,y:458,a:"k",d:"Parkplätze direkt am See."},
+{id:"zahnrad",n:"Bergbahn",c:"bahn",ic:"🚞",x:330,y:90,a:"p",d:"Zahnradbahn durch den grünen Norden."},
+{id:"dorf",lp:"r",n:"Märchendorf",c:"ort",ic:"🏘️",x:300,y:196,a:"v",d:"Kleine Häuser, Tunnel und Spielstationen."},
+{id:"dampf",n:"Dampfbahn",c:"bahn",ic:"🚂",x:455,y:182,a:"c",d:"Abfahrt am Bahnhof im Zentrum."},
+{id:"aussicht",n:"Seeblick",c:"ort",ic:"🔭",x:205,y:352,a:"s",d:"Aussichtspunkt mit Blick über den See."},
+{id:"seilbahn",n:"Seilbahn",c:"bahn",ic:"🚠",x:640,y:338,a:"l",d:"Talstation am östlichen Ende des Parks."},
+{id:"laden",lp:"l",n:"Souvenirladen",c:"shop",ic:"🛍️",x:258,y:232,a:"v",d:"Andenken und Geschenke im Dorf."},
+{id:"crepes",lp:"l",n:"Crêpes-Stand",c:"essen",ic:"🥞",x:262,y:270,a:"v",d:"Süsse und herzhafte Crêpes."},
+{id:"buffet",lp:"r",n:"Bahnhofsbuffet",c:"essen",ic:"🍴",x:398,y:280,a:"b",d:"Warme Gerichte am Bahnhof."},
+{id:"snack",n:"Snackbar",c:"essen",ic:"🍟",x:670,y:288,a:"l",d:"Pommes, Getränke und Eis."},
+{id:"wc1",lp:"l",n:"WC Mitte",c:"service",ic:"🚻",x:332,y:318,a:"w",d:"Toiletten in der Parkmitte."},
+{id:"wc2",n:"WC See",c:"service",ic:"🚻",x:562,y:412,a:"x",d:"Toiletten Richtung See."}];
+const S="http://www.w3.org/2000/svg",$=i=>document.getElementById(i);let ses="fruehling",cat="alle",cur=null;
+function el(t,a,p){const e=document.createElementNS(S,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e}
+const svg=$("map");
+let R=7;const rnd=()=>(R=(R*16807)%2147483647)/2147483647;
+const ISL="M150,250 C130,170 230,120 300,100 C380,60 470,90 560,120 C650,150 730,230 720,330 C715,400 640,440 560,440 C500,445 470,470 420,455 C350,440 300,490 230,450 C170,420 160,330 150,250 Z";
+const LAKE="M0,380 C70,430 130,500 200,520 L800,520 L800,330 C770,420 700,470 600,470 C520,470 480,500 430,495 C350,490 300,470 250,480 C180,490 100,430 0,380 Z";
+const TRACK="M232,300 C232,200 320,110 450,140 C580,170 680,250 665,340 C655,410 560,425 470,420 C390,415 300,440 262,405 C238,380 226,335 232,300 Z";
+const mt=svg.querySelector("title");svg.innerHTML=`<defs>
+<linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--lake)"/><stop offset="1" style="stop-color:var(--lake2)"/></linearGradient>
+<radialGradient id="gh" cx=".35" cy=".25" r=".85"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<radialGradient id="sg" cx=".88" cy=".05" r=".8"><stop offset="0" style="stop-color:var(--sunc)"/><stop offset="1" style="stop-color:var(--sunc);stop-opacity:0"/></radialGradient>
+<radialGradient id="vg" cx=".5" cy=".5" r=".75"><stop offset=".6" stop-color="#0d2b33" stop-opacity="0"/><stop offset="1" stop-color="#0d2b33" stop-opacity=".22"/></radialGradient>
+<filter id="bl" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="7"/></filter>
+<filter id="bs" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="2"/></filter>
+<pattern id="gs" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)"><rect width="10" height="20" fill="#fff" opacity=".13"/></pattern>
+<pattern id="fd" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(18)"><rect width="13" height="26" fill="#fff" opacity=".18"/></pattern>
+<clipPath id="isl"><path d="${ISL}"/></clipPath>
+</defs>`;
+svg.prepend(mt);const L={};["ground","lake","island","ground2","paths","tracks","flora","build","people","route","fx","sky","pins","ui"].forEach(k=>L[k]=el("g",{},svg));
+const FILL=v=>`style="fill:var(--${v})"`;
+// ---- ground: fields, hills
+L.ground.innerHTML=`<rect width="800" height="520" ${FILL("land")}/>
+<g opacity=".9"><path d="M0,0 L170,0 L120,150 L0,190Z" ${FILL("land2")}/><path d="M0,0 L170,0 L120,150 L0,190Z" fill="url(#fd)"/>
+<path d="M170,0 L420,0 L330,70 L190,95Z" ${FILL("land2")}/><path d="M170,0 L420,0 L330,70 L190,95Z" fill="url(#fd)" opacity=".6"/>
+<path d="M600,0 L800,0 L800,200 L740,130Z" ${FILL("land2")}/><path d="M600,0 L800,0 L800,200 L740,130Z" fill="url(#fd)"/>
+<path d="M0,200 L120,170 L110,330 L0,350Z" ${FILL("land2")}/><path d="M0,200 L120,170 L110,330 L0,350Z" fill="url(#fd)" opacity=".5"/>
+<ellipse cx="90" cy="60" rx="90" ry="38" fill="#fff" opacity=".12"/><ellipse cx="520" cy="40" rx="120" ry="30" fill="#fff" opacity=".12"/></g>`;
+// ---- lake
+L.lake.innerHTML=`<path d="${LAKE}" fill="url(#gl)"/>
+<path d="${LAKE}" fill="#fff" style="opacity:var(--ice)"/>
+<g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".6">
+${[[60,420],[120,486],[470,508],[640,492],[720,440],[330,500],[560,484],[190,510],[760,500],[40,400]].map(([x,y],i)=>`<path d="M${x},${y} q8,-6 16,0 t16,0 t16,0"><animateTransform attributeName="transform" type="translate" values="0 0;7 0;0 0" dur="${4+i%3}s" repeatCount="indefinite"/></path>`).join("")}</g>
+<path d="${LAKE}" fill="none" stroke="#fff" stroke-width="3" opacity=".6" stroke-dasharray="7 9"><animate attributeName="stroke-dashoffset" values="0;32" dur="3.5s" repeatCount="indefinite"/></path>
+<g style="opacity:calc(1 - var(--ice))">
+<g><g transform="translate(120,452)"><path d="M-12,0 L12,0 L8,6 L-8,6Z" fill="#fff" stroke="#c8402a" stroke-width="1.5"/><path d="M0,-2 L0,-24 L12,-4Z" fill="#fff"/><path d="M-2,-3 L-2,-18 L-11,-3Z" fill="#ffc43d"/><animateTransform attributeName="transform" type="translate" values="0 0;22 -5;0 0" dur="16s" repeatCount="indefinite" additive="sum"/></g></g>
+<g transform="translate(560,500)"><path d="M-12,0 L12,0 L8,6 L-8,6Z" fill="#fff" stroke="#1f8fd6" stroke-width="1.5"/><path d="M0,-2 L0,-24 L12,-4Z" fill="#fff"/><path d="M-2,-3 L-2,-18 L-11,-3Z" fill="#ff5a3c"/><animateTransform attributeName="transform" type="translate" values="560 500;590 495;560 500" dur="18s" repeatCount="indefinite"/></g>
+<g transform="translate(690,470)"><path d="M-10,0 L10,0 L7,5 L-7,5Z" fill="#fff" stroke="#9a5fe0" stroke-width="1.5"/><path d="M0,-2 L0,-20 L10,-3Z" fill="#fff"/><animateTransform attributeName="transform" type="translate" values="690 470;670 478;690 470" dur="14s" repeatCount="indefinite"/></g>
+<g><ellipse cx="60" cy="395" rx="6" ry="3.5" fill="#fff"/><path d="M64,393 q4,-8 1,-10" stroke="#fff" stroke-width="2" fill="none"/><circle cx="66" cy="383" r="1.6" fill="#fff"/><animateTransform attributeName="transform" type="translate" values="0 0;30 8;0 0" dur="22s" repeatCount="indefinite"/></g></g>
+<g><ellipse cx="772" cy="456" rx="26" ry="10" ${FILL("park")} stroke="#fff" stroke-width="3"/><rect x="762" y="440" width="20" height="14" fill="#fff6e2" stroke="#8a5a33"/><polygon points="758,440 772,430 786,440" fill="#d94b3a"/></g>`;
+// ---- island with depth
+L.island.innerHTML=`<path d="${ISL}" transform="translate(0,20)" fill="#0a2230" opacity=".3" filter="url(#bl)"/>
+<path d="${ISL}" transform="translate(0,9)" ${FILL("side")} stroke="#0003" stroke-width="1"/>
+<path d="${ISL}" style="fill:var(--park);stroke:var(--rim);stroke-width:5;stroke-linejoin:round"/>
+<g clip-path="url(#isl)"><rect width="800" height="520" fill="url(#gs)"/><rect width="800" height="520" fill="url(#gh)"/>
+<ellipse cx="360" cy="105" rx="95" ry="36" ${FILL("park2")}/><ellipse cx="350" cy="98" rx="70" ry="22" fill="#fff" opacity=".14"/>
+<ellipse cx="690" cy="360" rx="50" ry="70" ${FILL("park2")} opacity=".5"/></g>
+<g><ellipse cx="180" cy="324" rx="31" ry="21" fill="#fff" opacity=".7"/><ellipse cx="180" cy="324" rx="28" ry="18" fill="url(#gl)"/><ellipse cx="180" cy="324" rx="28" ry="18" fill="#fff" style="opacity:var(--ice)"/>
+<g style="opacity:var(--lily)"><circle cx="172" cy="328" r="4" fill="#3fb55a"/><circle cx="188" cy="320" r="3.5" fill="#3fb55a"/><circle cx="188" cy="320" r="1.3" fill="#ff7aa8"/><circle cx="178" cy="318" r="3" fill="#2f9a4a"/></g>
+<ellipse cx="190" cy="330" rx="5" ry="3" fill="#ffc43d"/><circle cx="194" cy="327" r="2" fill="#2a8a4a"/></g>
+<path d="M565,150 q70,30 125,108" stroke="#fff" stroke-width="22" fill="none" opacity=".4" stroke-linecap="round"/><path d="M565,150 q70,30 125,108" fill="none" stroke="url(#gl)" stroke-width="16" stroke-linecap="round"/>`;
+// ---- paths
+const pd=E.map(([a,b])=>`M${N[a]}L${N[b]}`).join("");
+L.paths.innerHTML=`<g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="${pd}" stroke="#0003" stroke-width="20" transform="translate(0,2)"/><path d="${pd}" stroke="var(--pathrim)" stroke-width="18" style="stroke:#d9ab45"/><path d="${pd}" stroke="#ffe7a8" stroke-width="13"/><path d="${pd}" stroke="#fff6d6" stroke-width="2" stroke-dasharray="2 10" opacity=".9"/></g>
+<rect x="272" y="432" width="80" height="32" rx="5" fill="#6f808b"/><g stroke="#fff" stroke-width="1.2" opacity=".8">${[0,1,2,3,4,5,6].map(i=>`<path d="M${278+i*11},434 v10 M${278+i*11},452 v10"/>`).join("")}</g>
+${[[283,438,"#ff5a3c"],[305,438,"#ffc43d"],[316,456,"#1f8fd6"],[338,438,"#fff"],[294,456,"#9a5fe0"]].map(([x,y,c])=>`<rect x="${x-3}" y="${y-1}" width="7" height="12" rx="2" fill="${c}"/>`).join("")}`;
+// ---- tracks
+L.tracks.innerHTML=`<path id="trk" d="${TRACK}" fill="none" stroke="#0003" stroke-width="9" transform="translate(0,2)"/><path d="${TRACK}" fill="none" stroke="#7a5a3a" stroke-width="7" stroke-dasharray="1.8 3.2"/><path d="${TRACK}" fill="none" stroke="#c9ced3" stroke-width="1.3" transform="translate(0,-2)"/><path d="${TRACK}" fill="none" stroke="#c9ced3" stroke-width="1.3" transform="translate(0,2)"/>
+<g stroke-linecap="round"><path d="M565,125 L690,255" stroke="#0004" stroke-width="12" transform="translate(0,4)"/>
+${[0,.2,.4,.6,.8,1].map(t=>{const x=565+125*t,y=125+130*t;return `<path d="M${x},${y} v16" stroke="#9a8a70" stroke-width="5"/><path d="M${x-5},${y+16} h10" stroke="#7d6e57" stroke-width="3"/>`}).join("")}
+<path d="M565,125 L690,255" stroke="#d6c7aa" stroke-width="11"/><path d="M565,125 L690,255" stroke="#5a4d3a" stroke-width="7" stroke-dasharray="1.6 3"/><path d="M565,125 L690,255" stroke="#fff" stroke-width="1.2" opacity=".8"/></g>
+<g><path d="M330,130 L398,90" stroke="#0004" stroke-width="7" transform="translate(0,3)"/><path d="M330,130 L398,90" stroke="#a0a8ae" stroke-width="6"/><path d="M330,130 L398,90" stroke="#ff5a3c" stroke-width="3" stroke-dasharray="1.5 2.5"/>
+<g><rect x="-8" y="-8" width="16" height="10" rx="2" fill="#ff5a3c" stroke="#8c2a18"/><rect x="-5" y="-6" width="4" height="4" fill="#fff"/><rect x="1" y="-6" width="4" height="4" fill="#fff"/><animateTransform attributeName="transform" type="translate" values="334,128;394,92;334,128" dur="14s" repeatCount="indefinite"/></g></g>
+<g><g><rect x="-17" y="-4" width="12" height="8" rx="2" fill="#2f9aa8" stroke="#145a63"/><rect x="-31" y="-4" width="12" height="8" rx="2" fill="#2f9aa8" stroke="#145a63"/><rect x="-5" y="-4.5" width="15" height="9" rx="2" fill="#c8402a" stroke="#6b1a0e"/><rect x="-3" y="-3.5" width="9" height="7" rx="3" fill="#222"/><rect x="5" y="-9" width="4" height="6" fill="#222"/><circle cx="12" cy="0" r="2" fill="#ffe27a"/>
+<circle r="3" cx="7" cy="-11" fill="#fff" opacity=".9"><animate attributeName="r" values="2;6;2" dur="2.4s" repeatCount="indefinite"/><animate attributeName="cy" values="-11;-26;-11" dur="2.4s" repeatCount="indefinite"/><animate attributeName="opacity" values=".9;0;.9" dur="2.4s" repeatCount="indefinite"/></circle>
+<animateMotion dur="46s" repeatCount="indefinite" rotate="auto"><mpath href="#trk"/></animateMotion></g></g>`;
+// ---- flora
+const decor=[[300,196,40],[258,232,24],[262,270,24],[345,190,16],[495,190,26],[535,235,24],[600,258,34],[515,358,34],[372,368,22],[180,324,36],[430,400,30],[310,455,44],[330,90,26],[400,92,12],[455,182,24],[330,300,18],[205,352,22],[640,338,26],[670,288,26],[562,412,22],[398,280,24],[627,190,34],[772,456,0]];
+const isl=el("path",{d:ISL,fill:"none"},svg),trk=document.getElementById("trk"),tl=trk.getTotalLength(),tp=[];
+for(let l=0;l<tl;l+=9){const q=trk.getPointAtLength(l);tp.push([q.x,q.y])}
+const dseg=(x,y,a,b)=>{const[ax,ay]=a,[bx,by]=b,dx=bx-ax,dy=by-ay,t=Math.max(0,Math.min(1,((x-ax)*dx+(y-ay)*dy)/(dx*dx+dy*dy)));return Math.hypot(x-ax-t*dx,y-ay-t*dy)};
+const inside=(x,y)=>[[0,0],[12,0],[-12,0],[0,12],[0,-12]].every(([a,b])=>isl.isPointInFill(new DOMPoint(x+a,y+b)));
+const free=(x,y)=>inside(x,y)&&!decor.some(([a,b,c])=>Math.hypot(a-x,b-y)<c)&&!E.some(([a,b])=>dseg(x,y,N[a],N[b])<15)&&!tp.some(q=>Math.hypot(q[0]-x,q[1]-y)<13)&&dseg(x,y,[565,125],[690,255])>22&&dseg(x,y,[565,150],[690,258])>14;
+let fl="",tr=[];
+for(let i=0,n=0;i<900&&n<100;i++){const x=150+rnd()*570,y=80+rnd()*370,k=rnd();if(!free(x,y))continue;n++;tr.push([x,y,k])}
+tr.sort((a,b)=>a[1]-b[1]);
+tr.forEach(([x,y,k])=>{const s=.85+k*.55,c=k<.5?"tree1":k<.88?"tree2":"tree3";
+ fl+=`<g transform="translate(${x} ${y}) scale(${s})"><ellipse cx="4" cy="6" rx="9" ry="3.2" fill="#0d2b33" opacity=".22"/><rect x="-1.6" y="-1" width="3.2" height="8" fill="#7a4e2c"/><circle cy="-6" r="9.5" ${FILL(c)}/><circle cx="-2.5" cy="-8.5" r="5.4" fill="#fff" opacity=".2"/><circle cx="3" cy="-3" r="5" fill="#000" opacity=".08"/><circle cy="-11" r="5" fill="#fff" style="opacity:calc(var(--snowroof)*.85)"/></g>`});
+// fir forest in north
+[[365,76],[382,66],[398,80],[412,70],[428,84],[442,76],[270,112],[285,100],[300,108],[455,92],[348,70]].forEach(([x,y])=>{fl+=`<g transform="translate(${x} ${y})"><ellipse cx="3" cy="9" rx="8" ry="3" fill="#0d2b33" opacity=".2"/><polygon points="0,-20 -9,0 9,0" fill="#1f6a4a"/><polygon points="0,-13 -11,6 11,6" fill="#25805a"/><polygon points="0,-6 -13,12 13,12" fill="#2d9468"/><polygon points="0,-20 -4,-12 4,-12" fill="#fff" style="opacity:var(--snowroof)"/></g>`});
+// flowerbeds
+[[395,378],[466,376],[360,330],[500,282],[250,300],[345,262],[612,326],[372,230],[480,250]].forEach(([cx,cy])=>{fl+=`<ellipse cx="${cx}" cy="${cy}" rx="17" ry="8" ${FILL("park2")} stroke="#0002" stroke-width=".8"/>`;for(let i=0;i<9;i++){const a=rnd()*6.28,r=rnd()*.9;fl+=`<circle cx="${cx+Math.cos(a)*r*14}" cy="${cy+Math.sin(a)*r*6}" r="1.9" style="fill:var(--${i%3?"fl1":"fl2"})"/>`}});
+L.flora.innerHTML=fl;
+// ---- buildings and rides
+const house=(x,y,w,h,rc,wall="#fff3dc")=>{const rh=h*.8,ay=y-h-rh,ey=y-h;return `<ellipse cx="${x+4}" cy="${y+1}" rx="${w*.65}" ry="3.2" fill="#0d2b33" opacity=".22"/><rect x="${x-w/2}" y="${ey}" width="${w}" height="${h}" fill="${wall}" stroke="#8a5a33" stroke-width=".8"/><rect x="${x-w/2+w*.18}" y="${y-h*.62}" width="${w*.2}" height="${h*.32}" fill="#79bde0"/><rect x="${x+w*.1}" y="${y-h*.62}" width="${w*.2}" height="${h*.32}" fill="#79bde0"/><polygon points="${x-w/2-3},${ey} ${x},${ay} ${x+w/2+3},${ey}" fill="${rc}" stroke="#0004" stroke-width=".7"/><polygon points="${x},${ay} ${x-(w/2+3)*.55},${ay+rh*.55} ${x+(w/2+3)*.55},${ay+rh*.55}" fill="#fff" style="opacity:var(--snowroof)"/>`};
+let b="";
+b+=house(272,168,22,13,"#d94b3a")+house(300,152,20,12,"#3a7bd5","#fff0d0")+house(330,166,22,14,"#e59a1f")+house(255,196,18,11,"#9a5fe0","#ffe9e0")+house(366,208,18,11,"#d94b3a");
+b+=`<g><ellipse cx="349" cy="199" rx="9" ry="3" fill="#0d2b33" opacity=".22"/><rect x="343" y="170" width="12" height="29" fill="#f4ecd8" stroke="#8a5a33" stroke-width=".8"/><polygon points="341,170 349,148 357,170" fill="#c8402a"/><circle cx="349" cy="178" r="3" fill="#fff" stroke="#8a5a33" stroke-width=".7"/><polygon points="349,148 345,160 353,160" fill="#fff" style="opacity:var(--snowroof)"/></g>`;
+// station
+b+=`<g><ellipse cx="500" cy="204" rx="28" ry="4" fill="#0d2b33" opacity=".2"/><rect x="482" y="186" width="36" height="16" fill="#f7efd8" stroke="#8a5a33" stroke-width=".8"/><rect x="486" y="191" width="6" height="9" fill="#79bde0"/><rect x="496" y="191" width="6" height="9" fill="#79bde0"/><rect x="506" y="191" width="6" height="9" fill="#79bde0"/><polygon points="478,186 500,170 522,186" fill="#2c7a5a" stroke="#0004" stroke-width=".7"/><polygon points="500,170 489,178 511,178" fill="#fff" style="opacity:var(--snowroof)"/><circle cx="500" cy="180" r="3" fill="#fff" stroke="#333" stroke-width=".7"/></g>`;
+// castle
+b+=`<g transform="translate(600 262)"><ellipse cx="3" cy="14" rx="30" ry="5" fill="#0d2b33" opacity=".25"/><rect x="-22" y="-10" width="44" height="24" fill="#efe6d4" stroke="#8a7a5c" stroke-width=".9"/>${[-22,-14,-6,2,10,18].map(x=>`<rect x="${x}" y="-14" width="5" height="5" fill="#efe6d4" stroke="#8a7a5c" stroke-width=".7"/>`).join("")}<rect x="-6" y="2" width="12" height="12" rx="6" fill="#6b4a32"/>
+<g><rect x="-30" y="-24" width="12" height="38" fill="#f4ecd8" stroke="#8a7a5c" stroke-width=".9"/><polygon points="-33,-24 -24,-42 -15,-24" fill="#3a7bd5"/><polygon points="-24,-42 -29,-33 -19,-33" fill="#fff" style="opacity:var(--snowroof)"/></g><g><rect x="18" y="-24" width="12" height="38" fill="#f4ecd8" stroke="#8a7a5c" stroke-width=".9"/><polygon points="15,-24 24,-42 33,-24" fill="#3a7bd5"/><polygon points="24,-42 19,-33 29,-33" fill="#fff" style="opacity:var(--snowroof)"/></g>
+<path d="M-24,-42 v-8" stroke="#555" stroke-width="1"/><polygon points="-24,-50 -14,-47 -24,-44" fill="#ff5a3c"><animate attributeName="points" values="-24,-50 -14,-47 -24,-44;-24,-50 -15,-49 -24,-44;-24,-50 -14,-47 -24,-44" dur="2s" repeatCount="indefinite"/></polygon></g>`;
+// ferris wheel
+b+=`<g transform="translate(515 358)"><ellipse cx="2" cy="26" rx="20" ry="4" fill="#0d2b33" opacity=".22"/><path d="M0,0 L-14,26 M0,0 L14,26" stroke="#7b5ea7" stroke-width="3" stroke-linecap="round"/><g><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/><circle r="22" fill="none" stroke="#ff5a3c" stroke-width="2.4"/><circle r="12" fill="none" stroke="#ffc43d" stroke-width="1.2"/>${[0,1,2,3,4,5,6,7].map(i=>{const a=i*Math.PI/4,x=Math.cos(a)*22,y=Math.sin(a)*22;return `<path d="M0,0 L${x},${y}" stroke="#ff5a3c" stroke-width="1"/><rect x="${x-3.4}" y="${y-2}" width="6.8" height="5.4" rx="1.6" fill="${["#1f8fd6","#ffc43d","#1fb26b","#9a5fe0"][i%4]}" stroke="#fff" stroke-width=".8"/>`}).join("")}</g><circle r="3" fill="#fff" stroke="#7b5ea7" stroke-width="1.4"/></g>`;
+// carousel
+b+=`<g transform="translate(372 368)"><ellipse cx="2" cy="12" rx="17" ry="4" fill="#0d2b33" opacity=".22"/><rect x="-14" y="2" width="28" height="9" rx="3" fill="#f7e6c4" stroke="#8a5a33" stroke-width=".8"/><polygon points="-18,2 0,-14 18,2" fill="#e8573a"/><polygon points="-12,2 -6,-8 0,-14 -3,2" fill="#fff" opacity=".85"/><polygon points="3,2 6,-8 0,-14 12,2" fill="#fff" opacity=".85"/><circle cy="-15" r="2" fill="#ffc43d"/><polygon points="0,-14 -5,-8 5,-8" fill="#fff" style="opacity:var(--snowroof)"/></g>`;
+// playground
+b+=`<g transform="translate(535 235)"><ellipse cx="0" cy="8" rx="20" ry="5" fill="#f1d9a0" stroke="#0002" stroke-width=".6"/><path d="M-14,6 L-10,-8 L-6,6 M-10,-8 L-3,-8" stroke="#ff5a3c" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M-9,-8 v10 M-5,-8 v10" stroke="#555" stroke-width=".8"/><rect x="-10.5" y="1" width="6" height="2" fill="#1f8fd6"/><path d="M4,-4 L16,6" stroke="#ffc43d" stroke-width="4" stroke-linecap="round"/><path d="M4,-4 v10" stroke="#9a5fe0" stroke-width="2"/></g>`;
+// kiosks with striped awnings
+const kiosk=(x,y,c)=>`<g transform="translate(${x} ${y})"><ellipse cx="2" cy="5" rx="10" ry="3" fill="#0d2b33" opacity=".22"/><rect x="-8" y="-6" width="16" height="10" fill="#fff3dc" stroke="#8a5a33" stroke-width=".7"/><path d="M-10,-6 h20 l-2,-6 h-16z" fill="${c}"/>${[-6,-1.5,3,7.5].map((o,i)=>i%2?"":`<path d="M${o-1},-12 h4.5 l1,6 h-5z" fill="#fff"/>`).join("")}<polygon points="-10,-12 0,-17 10,-12" fill="#fff" style="opacity:var(--snowroof)"/></g>`;
+b+=kiosk(278,262,"#f59a0c")+kiosk(668,298,"#ff5a3c")+kiosk(412,286,"#f59a0c")+kiosk(274,226,"#9a5fe0")+kiosk(344,324,"#1f8fd6");
+// gate
+b+=`<g><rect x="403" y="380" width="7" height="22" fill="#6b4a32"/><rect x="450" y="380" width="7" height="22" fill="#6b4a32"/><path d="M401,384 Q430,366 459,384" fill="none" stroke="#8a5a33" stroke-width="5"/><rect x="415" y="374" width="30" height="9" rx="4.5" fill="#ff5a3c" stroke="#fff" stroke-width="1.2"/><text x="430" y="381" font-size="6.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="Instrument Sans,sans-serif">PARK</text></g>`;
+// cable car
+b+=`<g><path d="M640,338 L765,448" stroke="#33505c" stroke-width="1.3"/>${[.35,.7].map(t=>{const x=640+125*t,y=338+110*t;return `<path d="M${x},${y} v-8" stroke="#33505c" stroke-width="2.4"/><circle cx="${x}" cy="${y-8}" r="2" fill="#ff5a3c"/>`}).join("")}<g><rect x="-5" y="1" width="10" height="7" rx="2" fill="#ff5a3c" stroke="#8c2a18" stroke-width=".8"/><path d="M0,1 v-4" stroke="#33505c"/><animateMotion dur="20s" repeatCount="indefinite" path="M640,338 L765,448 L640,338"/></g><rect x="632" y="326" width="14" height="12" fill="#fff6e2" stroke="#8a5a33" stroke-width=".8"/><polygon points="629,326 639,318 649,326" fill="#d94b3a"/></g>`;
+// hot air balloon
+b+=`<g transform="translate(690 80)"><ellipse cx="14" cy="64" rx="14" ry="4" fill="#0d2b33" opacity=".2" filter="url(#bs)"/><g><path d="M0,-22 C-18,-22 -18,6 -6,16 L6,16 C18,6 18,-22 0,-22Z" fill="#ff5a3c"/><path d="M0,-22 C-7,-22 -8,6 -2,16 L2,16 C8,6 7,-22 0,-22Z" fill="#ffc43d"/><path d="M-6,16 L-3,24 M6,16 L3,24" stroke="#6b4a32" stroke-width="1"/><rect x="-4" y="24" width="8" height="6" rx="1.5" fill="#8a5a33"/><animateTransform attributeName="transform" type="translate" values="0 0;6 -5;0 0" dur="7s" repeatCount="indefinite"/></g></g>`;
+L.build.innerHTML=b;
+// ---- people
+let pp="";const cols=["#ff5a3c","#1f8fd6","#ffc43d","#9a5fe0","#1fb26b","#ff7aa8","#ffffff","#f59a0c"];
+for(let i=0;i<46;i++){const [a,bb]=E[Math.floor(rnd()*E.length)],t=rnd(),x=N[a][0]+(N[bb][0]-N[a][0])*t+(rnd()-.5)*8,y=N[a][1]+(N[bb][1]-N[a][1])*t+(rnd()-.5)*5,c=cols[Math.floor(rnd()*cols.length)];
+ pp+=`<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><ellipse cy="2.5" rx="2.6" ry="1" fill="#0d2b33" opacity=".25"/><rect x="-1.5" y="-4" width="3" height="5.5" rx="1.2" fill="${c}"/><circle cy="-5.6" r="1.7" fill="#f6c9a0"/>${i%7==0?`<rect x="-1" y="-2" width="2" height="3" fill="${cols[(i+3)%8]}" transform="translate(4 1)"/>`:""}</g>`}
+L.people.innerHTML=pp;
+// ---- clouds + ui
+let cl="";[[120,70,0],[420,30,1],[620,420,2]].forEach(([x,y,i])=>{cl+=`<g style="pointer-events:none"><g transform="translate(${x} ${y})"><ellipse cx="6" cy="52" rx="42" ry="9" fill="#0d2b33" opacity=".1" filter="url(#bl)"/><g fill="#fff" opacity=".78"><ellipse cx="0" cy="0" rx="26" ry="11"/><ellipse cx="-16" cy="4" rx="16" ry="8"/><ellipse cx="18" cy="3" rx="19" ry="9"/><ellipse cx="4" cy="-7" rx="14" ry="9"/></g><animateTransform attributeName="transform" type="translate" values="${x} ${y};${x+90} ${y+4};${x} ${y}" dur="${70+i*20}s" repeatCount="indefinite"/></g></g>`});
+L.sky.innerHTML=cl+`<rect width="800" height="520" fill="url(#sg)" style="opacity:var(--sun);pointer-events:none"/><rect width="800" height="520" fill="url(#vg)" style="pointer-events:none"/>`;
+L.ui.innerHTML=`<g style="pointer-events:none"><rect x="14" y="14" width="176" height="52" rx="14" fill="#fff" opacity=".92"/><text x="30" y="38" font-size="18" font-weight="700" fill="#0d2b33" font-family="Familjen Grotesk,sans-serif">Beispielpark</text><text x="30" y="56" font-size="11" fill="#587178" font-family="Instrument Sans,sans-serif" letter-spacing="1.4">PARKPLAN</text>
+<g transform="translate(748 66)"><circle r="24" fill="#fff" opacity=".9"/><circle r="19" fill="none" stroke="#0d2b33" stroke-width=".8" opacity=".5"/><polygon points="0,-17 5,0 -5,0" fill="#ff5a3c"/><polygon points="0,17 5,0 -5,0" fill="#0d2b33" opacity=".6"/><text y="-21" text-anchor="middle" font-size="9" font-weight="700" fill="#0d2b33" font-family="Instrument Sans,sans-serif" dy="-1">N</text></g>
+<g transform="translate(18 488)"><rect x="-4" y="-18" width="150" height="24" rx="12" fill="#fff" opacity=".9"/><path d="M8,-6 H34" stroke="#c8402a" stroke-width="3.5" stroke-dasharray="3 6" stroke-linecap="round"/><text x="42" y="-2" font-size="11" font-weight="600" fill="#0d2b33" font-family="Instrument Sans,sans-serif">Bahn</text><path d="M80,-6 H104" stroke="#ff4f6d" stroke-width="4" stroke-dasharray="1 8" stroke-linecap="round"/><text x="110" y="-2" font-size="11" font-weight="600" fill="#0d2b33" font-family="Instrument Sans,sans-serif">Weg</text></g></g>`;
+// ---- routing
+function route(p){L.route.innerHTML="";if(!p||p.id==="eingang")return;
+ const D={e:0},prev={},Q=new Set(Object.keys(N));
+ while(Q.size){let u=null;Q.forEach(k=>{if(D[k]!==undefined&&(u===null||D[k]<D[u]))u=k});if(u===null||u===p.a)break;Q.delete(u);
+  E.forEach(([a,b])=>{const v=a===u?b:b===u?a:null;if(v&&Q.has(v)){const d=D[u]+Math.hypot(N[a][0]-N[b][0],N[a][1]-N[b][1]);if(D[v]===undefined||d<D[v]){D[v]=d;prev[v]=u}}})}
+ const o=[p.a];while(o[0]!=="e"&&prev[o[0]])o.unshift(prev[o[0]]);
+ const pts=o.map(k=>N[k]);pts.push([p.x,p.y]);const d="M"+pts.join("L");
+ L.route.innerHTML=`<path d="${d}" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/><path d="${d}" fill="none" stroke="#ff4f6d" stroke-width="5" stroke-dasharray="1 10" stroke-linecap="round" stroke-linejoin="round"><animate attributeName="stroke-dashoffset" values="22;0" dur="1.2s" repeatCount="indefinite"/></path>`}
+// ---- falling effects
+function fx(){const q=SEAS[ses].fx;let h="";for(let i=0;i<q.n;i++){const x=rnd()*800,c=q.c[Math.floor(rnd()*q.c.length)],d=7+rnd()*9,dx=(rnd()-.4)*70,r=1.4+rnd()*2.3,bg=-rnd()*d;
+ const sh=q.k==="snow"?`<circle r="${r}" fill="${c}" opacity=".9"/>`:q.k==="spark"?`<circle r="${r*.9}" fill="${c}" opacity=".8"><animate attributeName="opacity" values="0;.9;0" dur="${2+rnd()*2}s" repeatCount="indefinite"/></circle>`:`<ellipse rx="${r*1.9}" ry="${r}" fill="${c}" opacity=".9" transform="rotate(${rnd()*180})"/>`;
+ h+=q.k==="spark"?`<g transform="translate(${x} ${60+rnd()*400})">${sh}</g>`:`<g transform="translate(${x} -10)">${sh}<animateTransform attributeName="transform" type="translate" values="${x} -10;${x+dx} 540" dur="${d}s" begin="${bg}s" repeatCount="indefinite"/></g>`}
+ L.fx.innerHTML=`<g style="pointer-events:none">${h}</g>`}
+// ---- pins and list
+const gPins=L.pins;
+P.forEach(p=>{const col=CATS[p.c].c,g=el("g",{class:"pin","data-id":p.id,transform:`translate(${p.x} ${p.y})`},gPins);
+ el("ellipse",{cx:1,cy:17,rx:11,ry:3.4,fill:"#0d2b33",opacity:".3"},g);
+ el("path",{d:"M-6,12 L0,22 L6,12 Z",fill:col},g);
+ el("circle",{class:"ring",r:16,fill:col,stroke:"#fff","stroke-width":3},g);
+ el("text",{class:"em"},g).textContent=p.ic;
+ const lt=el("text",{class:"lab",y:p.lp?5:36,x:p.lp==="l"?-23:p.lp==="r"?23:0},g);lt.textContent=p.n;if(p.lp)lt.style.textAnchor=p.lp==="l"?"end":"start";
+ g.onclick=()=>{cur=p.id;apply()};
+ const bt=document.createElement("button");bt.className="item";bt.dataset.id=p.id;bt.setAttribute("aria-pressed","false");bt.type="button";bt.innerHTML=`<i style="background:${col}" aria-hidden="true"></i><span><span aria-hidden="true">${p.ic}</span> ${p.n}</span>`;bt.onclick=()=>{cur=p.id;apply()};$("list").appendChild(bt)});
+function mkChips(box,items,set){items.forEach(([k,n])=>{const bt=document.createElement("button");bt.className="chip";bt.type="button";bt.textContent=n;bt.dataset.k=k;bt.onclick=()=>{set(k);apply()};box.appendChild(bt)})}
+mkChips($("seasons"),Object.entries(SEAS).map(([k,v])=>[k,v.n]),k=>{ses=k});
+mkChips($("cats"),[["alle","Alle"],...Object.entries(CATS).map(([k,v])=>[k,v.n])],k=>{cat=k;if(cur&&k!=="alle"&&P.find(x=>x.id===cur).c!==k)cur=null});
+let lastS=null;
+function apply(){const q=SEAS[ses];for(const k in q.v)svg.style.setProperty("--"+k,q.v[k]);if(lastS!==ses){fx();lastS=ses}
+ document.querySelectorAll("#seasons .chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.k===ses));
+ document.querySelectorAll("#cats .chip").forEach(x=>x.setAttribute("aria-pressed",x.dataset.k===cat));
+ document.querySelectorAll(".pin").forEach(g=>{const p=P.find(x=>x.id===g.dataset.id);g.style.opacity=(cat==="alle"||p.c===cat||p.id==="eingang")?1:.22;g.classList.toggle("sel",g.dataset.id===cur)});
+ document.querySelectorAll(".item").forEach(x=>{const p=P.find(y=>y.id===x.dataset.id);x.hidden=cat!=="alle"&&p.c!==cat;x.setAttribute("aria-pressed",x.dataset.id===cur)});
+ const p=P.find(x=>x.id===cur);route(p);
+ $("info").innerHTML=p?`<b><span aria-hidden="true">${p.ic}</span> ${p.n}</b><span>${CATS[p.c].n}. ${p.d}${p.id==="eingang"?"":" Der Weg vom Eingang ist eingezeichnet."}</span>`:`<b>Wohin soll es gehen?</b><span>Tippen Sie auf einen Ort in der Karte oder in der Liste.</span>`}
+apply();
+
+// Animationen anhalten, wenn die Karte nicht sichtbar ist (spart Akku/CPU) oder reduzierte Bewegung gewünscht wird
+const rm=window.matchMedia("(prefers-reduced-motion: reduce)");
+let vis=true;const anim=()=>{(!vis||rm.matches)?svg.pauseAnimations():svg.unpauseAnimations()};
+if("IntersectionObserver"in window)new IntersectionObserver(es=>{vis=es[0].isIntersecting;anim()},{rootMargin:"100px"}).observe(svg);
+rm.addEventListener?.("change",anim);anim();
+// Mobile: Karte zu Beginn mittig zeigen
+const mb=$("mapbox");if(mb.scrollWidth>mb.clientWidth)mb.scrollLeft=(mb.scrollWidth-mb.clientWidth)/2;
+// Kontakt
+const MAIL="map2follow@gmail.com";
+const txt=()=>`Guten Tag\n\nGerne möchte ich eine unverbindliche Offerte für einen Parkplan anfragen.\n\nPark: ${$("n").value.trim()||"-"}\nName: ${$("p").value.trim()||"-"}\nWünsche: ${$("w").value.trim()||"-"}\n\nUnseren aktuellen Plan finden Sie im Anhang.\n\nFreundliche Grüsse`;
+$("f").addEventListener("submit",e=>{e.preventDefault();
+ const park=$("n").value.trim();
+ const subj="Anfrage Parkplan"+(park?" – "+park:"");
+ window.location.href=`mailto:${MAIL}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(txt())}`;
+ $("st").textContent="Ihr E-Mail-Programm sollte sich jetzt öffnen. Falls nicht, nutzen Sie «Text kopieren» und senden Sie ihn an "+MAIL+"."});
+$("copy").addEventListener("click",()=>{const t=txt();
+ const ok=()=>$("st").textContent="Text kopiert. Fügen Sie ihn in eine E-Mail an "+MAIL+" ein und hängen Sie Ihren Plan an.";
+ const fb=()=>{$("w").value=t;$("w").select();$("st").textContent="Der Text steht im Feld. Bitte kopieren Sie ihn von dort."};
+ try{navigator.clipboard.writeText(t).then(ok,fb)}catch(_){fb()}});
+$("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

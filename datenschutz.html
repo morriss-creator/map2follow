@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datenschutzerklärung – Map2follow</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23ff5a3c'/%3E%3Cpath d='M7 21 C11 9 15 23 19 12 S25 14 25 14' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-dasharray='1 5'/%3E%3Ccircle cx='25' cy='14' r='3' fill='%23ffc43d'/%3E%3C/svg%3E">
+<style>
+/* Schriften lokal eingebunden (keine Verbindung zu Google, schneller und datenschutzfreundlich) */
+@font-face{font-family:"Familjen Grotesk";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/familjen-grotesk-latin.woff2) format("woff2")}
+@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/instrument-sans-latin.woff2) format("woff2")}
+/* Layout: ruhige Seite mit einer grossen, bunten Demo-Karte als Mittelpunkt. */
+:root{--bg:#f3f8f6;--panel:#ffffff;--ink:#0d2b33;--mute:#526a71;--line:#d6e5e1;--accent:#ff5a3c;--accent-btn:#d6401f;--accent-btn-hover:#b9361a;--accent-ink:#ffffff;--sun:#ffc43d;--teal:#0f7a86;
+--display:"Familjen Grotesk",system-ui,sans-serif;--body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+--land:#cdeeb4;--land2:#bfe6a3;--park:#8ad970;--park2:#7fd166;--rim:#37a05a;--lake:#62c9ee;--path:#ffe7a8;--pathrim:#e6b94f;--route:#ff4f6d;--tree1:#2e9a4d;--tree2:#46b562;--tree3:#f2a33a;
+color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1b20;--panel:#112a31;--ink:#e8f5f3;--mute:#a3c0c4;--line:#21404a;--teal:#4fc3cf;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1b20;--panel:#112a31;--ink:#e8f5f3;--mute:#a3c0c4;--line:#21404a;--teal:#4fc3cf;color-scheme:dark}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;padding-inline:max(20px,env(safe-area-inset-left,0px)) max(20px,env(safe-area-inset-right,0px))}
+img,svg{max-width:100%}
+a{color:inherit}
+p{margin:0}
+.w{max-width:1120px;margin-inline:auto}
+.skip{position:absolute;left:12px;top:-60px;z-index:10;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:600;text-decoration:none}
+.skip:focus{top:12px}
+.site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;padding-block:20px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-weight:700;font-size:23px;letter-spacing:-.02em;display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
+.logo svg{width:30px;height:30px;flex:none}
+.site-header nav ul{display:flex;align-items:center;gap:6px 22px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
+.site-header nav a{color:var(--mute);text-decoration:none;font-weight:500;font-size:15.5px;padding-block:6px;display:inline-block}
+.site-header nav a:hover{color:var(--ink)}
+.site-header nav a.nav-cta{color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:600}
+.site-header nav a.nav-cta:hover{background:var(--ink);color:var(--bg)}
+h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.025em;margin:0;text-wrap:balance}
+h1{font-size:clamp(40px,6.4vw,78px);font-weight:700;max-width:15ch}
+h2{font-size:clamp(30px,4vw,46px);font-weight:700}
+h3{font-size:21px;font-weight:700;line-height:1.2}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--mute);max-width:56ch;margin:20px 0 0;text-wrap:pretty}
+.hero{padding-block:40px 36px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:0;list-style:none;color:var(--mute);font-size:15.5px;font-weight:500}
+.facts li{display:flex;align-items:center;gap:8px}
+.facts li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--sun);flex:none}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;font:600 16.5px/1.2 var(--body);padding:12px 22px;border-radius:12px;border:2px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s,transform .15s}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.btn.pri{background:var(--accent-btn);border-color:var(--accent-btn);color:var(--accent-ink)}
+.btn.pri:hover{background:var(--accent-btn-hover);border-color:var(--accent-btn-hover);color:#fff}
+.btn:active{transform:translateY(1px)}
+a:focus-visible,button:focus-visible,.btn:focus-visible,.chip:focus-visible,textarea:focus-visible,input:focus-visible,.item:focus-visible,.mapbox:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+main>section{padding-block:56px;scroll-margin-top:16px}
+.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--teal);margin:0 0 12px}
+.demo{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:16px;margin-top:28px}
+.bar{display:flex;gap:10px 16px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:2px 2px 16px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font:600 14.5px var(--body);min-height:40px;padding:8px 15px;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}
+.mapbox{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#cdeeb4}
+svg.map{display:block;width:100%;height:auto}
+.pin{cursor:pointer}
+.pin .lab{font:700 12.5px var(--body);fill:#0d2b33;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round;text-anchor:middle}
+.pin .em{font-size:16px;text-anchor:middle;dominant-baseline:central}
+.pin.sel .ring{stroke:#0d2b33;stroke-width:4}.pin:hover .ring{stroke:#0d2b33}
+.side{display:flex;flex-direction:column;gap:10px;min-width:0}
+.info{border:1px solid var(--line);border-radius:16px;padding:14px 16px;min-height:112px}
+.info b{font-family:var(--display);font-size:20px;display:block;margin-bottom:4px}
+.info span{color:var(--mute);font-size:15.5px}
+.list{display:flex;flex-direction:column;gap:6px;max-height:330px;overflow:auto;padding:2px}
+.item{display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:12px;padding:9px 11px;min-height:44px;font:500 15px var(--body);cursor:pointer}
+.item:hover{border-color:var(--ink)}
+.item i{width:12px;height:12px;border-radius:50%;flex:none}
+.item[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.note{color:var(--mute);font-size:14.5px;margin:14px 4px 2px}
+.swipe{display:none;color:var(--mute);font-size:14px;margin:8px 4px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px 24px;margin:32px 0 0;padding:0;list-style:none}
+.card{border-top:3px solid var(--ink);padding-top:16px}
+.card p{margin:10px 0 0;color:var(--mute);font-size:16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:32px;counter-reset:s;padding:0;list-style:none}
+.steps li{counter-increment:s}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sun);color:#0d2b33;font:700 18px var(--display);margin-bottom:12px}
+.steps p{margin:8px 0 0;color:var(--mute);font-size:16px}
+.section-cta{margin-top:34px}
+.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:clamp(24px,4.5vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:32px 44px}
+.contact h2{color:var(--bg)}
+.contact p{color:var(--bg);opacity:.85;margin-top:16px}
+@supports (color:color-mix(in srgb,red,blue)){.contact p{opacity:1;color:color-mix(in srgb,var(--bg) 82%,var(--ink))}}
+.contact-links{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
+.contact-links a{display:inline-flex;align-items:center;gap:12px;color:var(--bg);text-decoration:none;font-weight:600;font-size:17px;min-height:44px}
+.contact-links a:hover span:last-child{text-decoration:underline;text-underline-offset:3px}
+.contact-links .ic{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--bg) 14%,var(--ink));flex:none}
+.contact-links .ic svg{width:19px;height:19px}
+.contact-links small{display:block;font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+.contact textarea,.contact input{width:100%;font:16px/1.5 var(--body);padding:12px 14px;border-radius:10px;border:2px solid transparent;background:var(--bg);color:var(--ink);margin-top:6px}
+.contact textarea{resize:vertical;min-height:120px}
+.contact label{font-size:14.5px;font-weight:600;display:block;margin-top:14px}
+.contact label:first-of-type{margin-top:0}
+.contact label .opt{font-weight:400;opacity:.75}
+.contact .btns{margin-top:18px}
+.contact .btn{border-color:var(--bg);color:var(--bg)}
+.contact .btn:hover{background:var(--bg);color:var(--ink)}
+.contact .btn.pri{border-color:var(--accent-btn);color:#fff}
+.contact .btn.pri:hover{background:var(--accent-btn-hover);border-color:var(--accent-btn-hover);color:#fff}
+.hint{font-size:14px;margin-top:12px;opacity:.85}
+.status{font-size:14.5px;margin-top:10px;min-height:22px;font-weight:600}
+.site-footer{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;padding-block:32px 44px;color:var(--mute);font-size:14.5px;border-top:1px solid var(--line);margin-top:24px}
+.site-footer ul{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0;padding:0;list-style:none}
+.site-footer a{color:var(--mute);text-underline-offset:3px}
+.site-footer a:hover{color:var(--ink)}
+@media (max-width:860px){.stage{grid-template-columns:minmax(0,1fr)}.list{max-height:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
+@media (max-width:600px){
+ body{font-size:16.5px}
+ .site-header{padding-block:16px 8px}
+ .site-header nav{width:100%}
+ .site-header nav ul{gap:4px 18px}
+ .site-header nav a{font-size:15px}
+ .hero{padding-block:24px 20px}
+ main>section{padding-block:40px}
+ .demo{padding:10px;border-radius:20px;margin-inline:-6px}
+ .bar{padding:2px 2px 12px}
+ .chip{font-size:14px;padding:7px 12px;min-height:38px}
+ .mapbox{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;border-radius:14px}
+ svg.map{width:680px;max-width:none}
+ .swipe{display:block}
+ .btns .btn{flex:1 1 100%}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+<style>.legal{max-width:70ch;padding-block:24px 56px}.legal h1{font-size:clamp(34px,5vw,52px)}.legal h2{font-size:24px;margin-top:36px}.legal p,.legal li{margin-top:12px;color:var(--ink)}.todo{background:#fff3c4;color:#5a4300;padding:1px 6px;border-radius:6px;font-weight:600}</style>
+</head>
+<body>
+<div class="w">
+<header class="site-header"><a class="logo" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15" fill="#ff5a3c"/><path d="M7 21 C11 9 15 23 19 12 S25 14 25 14" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="1 5"/><circle cx="25" cy="14" r="3" fill="#ffc43d"/></svg>Map2follow</a><nav aria-label="Hauptnavigation"><ul><li><a href="index.html">Zur Startseite</a></li><li><a class="nav-cta" href="index.html#kontakt">Kontakt</a></li></ul></nav></header>
+<main class="legal">
+<h1>Datenschutzerklärung</h1>
+<!-- Hinweis: Vorlage ohne juristische Prüfung erstellt (Stand November 2026). -->
+<p>Mit dieser Datenschutzerklärung informieren wir Sie darüber, welche Personendaten wir im Zusammenhang mit dieser Website bearbeiten. Massgebend ist das Schweizer Datenschutzgesetz (DSG).</p>
+<h2>Verantwortliche Stelle</h2>
+<p>Map2follow<br>Morris Wernli<br>Staffeleggweg 9<br>5033 Buchs AG<br>Schweiz</p>
+<p>E-Mail: <a href="mailto:map2follow@gmail.com">map2follow@gmail.com</a><br>Telefon: <a href="tel:+41772329394">+41 77 232 93 94</a></p>
+<h2>Welche Daten wir bearbeiten</h2>
+<p>Wenn Sie uns per E-Mail oder Telefon kontaktieren, bearbeiten wir die Angaben, die Sie uns mitteilen (zum Beispiel Name, Name des Parks, E-Mail-Adresse, Telefonnummer, Ihre Wünsche und angehängte Pläne), um Ihre Anfrage zu beantworten und eine Offerte zu erstellen.</p>
+<p>Das Formular auf dieser Website speichert und versendet nichts selbst. Es bereitet lediglich eine E-Mail in Ihrem eigenen E-Mail-Programm vor.</p>
+<h2>Cookies, Tracking und externe Dienste</h2>
+<p>Diese Website verwendet keine Cookies und keine Analyse- oder Trackingdienste. Die Schriften werden direkt von unserem Server geladen, nicht von Drittanbietern.</p>
+<h2>Hosting</h2>
+<p>Diese Website wird über GitHub Pages bereitgestellt, einen Dienst der GitHub, Inc., USA. Beim Aufruf der Seite erfasst GitHub technisch notwendige Daten wie Ihre IP-Adresse, Datum und Uhrzeit des Zugriffs sowie Angaben zum Browser, um die Website auszuliefern und die Sicherheit des Dienstes zu gewährleisten. Diese Daten können in den USA bearbeitet werden. Weitere Informationen finden Sie in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+<h2>Domain</h2>
+<p>Die Domain map2follow.ch ist bei der Hostpoint AG, Schweiz, registriert.</p>
+<h2>E-Mail</h2>
+<p>Für E-Mails nutzen wir Gmail von Google. Ihre Nachrichten können dabei auch auf Servern ausserhalb der Schweiz gespeichert werden.</p>
+<h2>Ihre Rechte</h2>
+<p>Sie können jederzeit Auskunft über Ihre bei uns gespeicherten Daten verlangen sowie deren Berichtigung oder Löschung beantragen. Schreiben Sie uns dazu an <a href="mailto:map2follow@gmail.com">map2follow@gmail.com</a>.</p>
+<p>Stand: November 2026</p>
+</main>
+<footer class="site-footer"><p>© 2026 Map2follow</p><ul><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></footer>
+</div>
+</body>
+</html>
