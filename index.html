@@ -1,244 +1,262 @@
-<!doctype html>
-<html lang="de-CH">
+<!DOCTYPE html>
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Map2follow – Illustrierte Parkpläne für Freizeitparks und Attraktionsbetriebe</title>
-<meta name="description" content="Map2follow gestaltet illustrierte Parkpläne für Freizeitparks und Attraktionsbetriebe: farbig, übersichtlich, in saisonalen Versionen und mehreren Sprachen. Jetzt unverbindlich eine Offerte anfragen.">
-<!-- Domain: www.map2follow.ch (noch nicht registriert) -->
-<link rel="canonical" href="https://www.map2follow.ch/">
-<meta name="theme-color" content="#f3f8f6" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0a1b20" media="(prefers-color-scheme: dark)">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="de_CH">
-<meta property="og:site_name" content="Map2follow">
-<meta property="og:title" content="Map2follow – Parkpläne, die Gäste gern in die Hand nehmen">
-<meta property="og:description" content="Illustrierte Parkpläne für Freizeitparks und Attraktionsbetriebe – farbig, übersichtlich und für alle vier Jahreszeiten.">
-<meta property="og:url" content="https://www.map2follow.ch/">
-<meta property="og:image" content="https://www.map2follow.ch/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Illustrierter Beispielplan eines Freizeitparks mit See, Bahnen und Attraktionen">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23ff5a3c'/%3E%3Cpath d='M7 21 C11 9 15 23 19 12 S25 14 25 14' stroke='%23fff' stroke-width='3' fill='none' stroke-linecap='round' stroke-dasharray='1 5'/%3E%3Ccircle cx='25' cy='14' r='3' fill='%23ffc43d'/%3E%3C/svg%3E">
-<link rel="preload" href="fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Map2follow","url":"https://www.map2follow.ch/","email":"map2follow@gmail.com","telephone":"+41772329394","description":"Illustrierte Parkpläne für Freizeitparks und Attraktionsbetriebe"}</script>
+<title>Map2follow</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* Schriften lokal eingebunden (keine Verbindung zu Google, schneller und datenschutzfreundlich) */
-@font-face{font-family:"Familjen Grotesk";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/familjen-grotesk-latin.woff2) format("woff2")}
-@font-face{font-family:"Instrument Sans";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/instrument-sans-latin.woff2) format("woff2")}
 /* Layout: ruhige Seite mit einer grossen, bunten Demo-Karte als Mittelpunkt. */
-:root{--bg:#f3f8f6;--panel:#ffffff;--ink:#0d2b33;--mute:#526a71;--line:#d6e5e1;--accent:#ff5a3c;--accent-btn:#d6401f;--accent-btn-hover:#b9361a;--accent-ink:#ffffff;--sun:#ffc43d;--teal:#0f7a86;
---display:"Familjen Grotesk",system-ui,sans-serif;--body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
---land:#cdeeb4;--land2:#bfe6a3;--park:#8ad970;--park2:#7fd166;--rim:#37a05a;--lake:#62c9ee;--path:#ffe7a8;--pathrim:#e6b94f;--route:#ff4f6d;--tree1:#2e9a4d;--tree2:#46b562;--tree3:#f2a33a;
-color-scheme:light}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1b20;--panel:#112a31;--ink:#e8f5f3;--mute:#a3c0c4;--line:#21404a;--teal:#4fc3cf;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0a1b20;--panel:#112a31;--ink:#e8f5f3;--mute:#a3c0c4;--line:#21404a;--teal:#4fc3cf;color-scheme:dark}
-@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+:root{--bg:#f3f8f6;--panel:#ffffff;--ink:#0d2b33;--mute:#587178;--line:#d6e5e1;--accent:#ff5a3c;--accent-ink:#ffffff;--sun:#ffc43d;--teal:#0f7a86;
+--display:"Familjen Grotesk",system-ui,sans-serif;--body:"Instrument Sans",system-ui,sans-serif;
+--land:#cdeeb4;--land2:#bfe6a3;--park:#8ad970;--park2:#7fd166;--rim:#37a05a;--lake:#62c9ee;--path:#ffe7a8;--pathrim:#e6b94f;--route:#ff4f6d;--tree1:#2e9a4d;--tree2:#46b562;--tree3:#f2a33a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1b20;--panel:#112a31;--ink:#e8f5f3;--mute:#93b3b8;--line:#21404a;--teal:#4fc3cf;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1b20;--panel:#112a31;--ink:#e8f5f3;--mute:#93b3b8;--line:#21404a;--teal:#4fc3cf;color-scheme:dark}
 *,*::before,*::after{box-sizing:border-box}
-[hidden]{display:none!important}
-html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased;padding-inline:max(20px,env(safe-area-inset-left,0px)) max(20px,env(safe-area-inset-right,0px))}
-img,svg{max-width:100%}
-a{color:inherit}
-p{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.55;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px))}
 .w{max-width:1120px;margin-inline:auto}
-.skip{position:absolute;left:12px;top:-60px;z-index:10;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:600;text-decoration:none}
-.skip:focus{top:12px}
-.site-header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;padding-block:20px;flex-wrap:wrap}
-.logo{font-family:var(--display);font-weight:700;font-size:23px;letter-spacing:-.02em;display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink)}
-.logo svg{width:30px;height:30px;flex:none}
-.site-header nav ul{display:flex;align-items:center;gap:6px 22px;flex-wrap:wrap;margin:0;padding:0;list-style:none}
-.site-header nav a{color:var(--mute);text-decoration:none;font-weight:500;font-size:15.5px;padding-block:6px;display:inline-block}
-.site-header nav a:hover{color:var(--ink)}
-.site-header nav a.nav-cta{color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font-weight:600}
-.site-header nav a.nav-cta:hover{background:var(--ink);color:var(--bg)}
-h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.025em;margin:0;text-wrap:balance}
-h1{font-size:clamp(40px,6.4vw,78px);font-weight:700;max-width:15ch}
-h2{font-size:clamp(30px,4vw,46px);font-weight:700}
-h3{font-size:21px;font-weight:700;line-height:1.2}
-.lead{font-size:clamp(18px,2vw,21px);color:var(--mute);max-width:56ch;margin:20px 0 0;text-wrap:pretty}
-.hero{padding-block:40px 36px}
-.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin:26px 0 0;padding:0;list-style:none;color:var(--mute);font-size:15.5px;font-weight:500}
-.facts li{display:flex;align-items:center;gap:8px}
-.facts li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--sun);flex:none}
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;font:600 16.5px/1.2 var(--body);padding:12px 22px;border-radius:12px;border:2px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;cursor:pointer;transition:background-color .15s,color .15s,border-color .15s,transform .15s}
-.btn:hover{background:var(--ink);color:var(--bg)}
-.btn.pri{background:var(--accent-btn);border-color:var(--accent-btn);color:var(--accent-ink)}
-.btn.pri:hover{background:var(--accent-btn-hover);border-color:var(--accent-btn-hover);color:#fff}
-.btn:active{transform:translateY(1px)}
-a:focus-visible,button:focus-visible,.btn:focus-visible,.chip:focus-visible,textarea:focus-visible,input:focus-visible,.item:focus-visible,.mapbox:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
-main>section{padding-block:56px;scroll-margin-top:16px}
-.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--teal);margin:0 0 12px}
-.demo{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:16px;margin-top:28px}
-.bar{display:flex;gap:10px 16px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:2px 2px 16px}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;flex-wrap:wrap}
+.logo{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo svg{width:28px;height:28px}
+nav{display:flex;gap:18px;flex-wrap:wrap}
+nav a{color:var(--mute);text-decoration:none;font-weight:500;font-size:15px}
+nav a:hover{color:var(--ink)}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.025em;margin:0;text-wrap:balance}
+h1{font-size:clamp(38px,6.4vw,76px);font-weight:700;max-width:15ch}
+h2{font-size:clamp(28px,4vw,44px);font-weight:700}
+h3{font-size:20px;font-weight:700;line-height:1.2}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--mute);max-width:56ch;margin:18px 0 0}
+.hero{padding-block:36px 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{font:600 16px var(--body);padding:13px 22px;border-radius:12px;border:2px solid var(--ink);background:transparent;color:var(--ink);text-decoration:none;cursor:pointer}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:focus-visible,.chip:focus-visible,.pin:focus-visible,textarea:focus-visible,input:focus-visible,.item:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+section{padding-block:44px}
+.eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--teal);margin-bottom:10px}
+.demo{background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:14px}
+.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:4px 4px 14px}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{font:600 14.5px var(--body);min-height:40px;padding:8px 15px;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
-.chip:hover{border-color:var(--ink)}
+.chip{font:600 14px var(--body);padding:8px 14px;border-radius:999px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.stage{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:16px;align-items:start}
-.mapbox{border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#cdeeb4}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:14px;align-items:start}
+.mapbox{border-radius:18px;overflow:hidden;border:1px solid var(--line)}
 svg.map{display:block;width:100%;height:auto}
 .pin{cursor:pointer}
-.pin .lab{font:700 12.5px var(--body);fill:#0d2b33;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round;text-anchor:middle}
+.pin .lab{font:700 12px var(--body);fill:#0d2b33;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round;text-anchor:middle}
 .pin .em{font-size:16px;text-anchor:middle;dominant-baseline:central}
-.pin.sel .ring{stroke:#0d2b33;stroke-width:4}.pin:hover .ring{stroke:#0d2b33}
+.pin.sel .ring{stroke:#0d2b33;stroke-width:4}.pin:hover .ring{stroke:#0d2b33}.pin .lab{font-size:12.5px}
 .side{display:flex;flex-direction:column;gap:10px;min-width:0}
-.info{border:1px solid var(--line);border-radius:16px;padding:14px 16px;min-height:112px}
-.info b{font-family:var(--display);font-size:20px;display:block;margin-bottom:4px}
-.info span{color:var(--mute);font-size:15.5px}
-.list{display:flex;flex-direction:column;gap:6px;max-height:330px;overflow:auto;padding:2px}
-.item{display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:12px;padding:9px 11px;min-height:44px;font:500 15px var(--body);cursor:pointer}
-.item:hover{border-color:var(--ink)}
+.info{border:1px solid var(--line);border-radius:16px;padding:14px 16px;min-height:104px}
+.info b{font-family:var(--display);font-size:20px;display:block}
+.info span{color:var(--mute);font-size:15px}
+.list{display:flex;flex-direction:column;gap:6px;max-height:300px;overflow:auto}
+.item{display:flex;align-items:center;gap:10px;text-align:left;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:12px;padding:8px 10px;font:500 14.5px var(--body);cursor:pointer}
 .item i{width:12px;height:12px;border-radius:50%;flex:none}
 .item[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.note{color:var(--mute);font-size:14.5px;margin:14px 4px 2px}
-.swipe{display:none;color:var(--mute);font-size:14px;margin:8px 4px 0}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px 24px;margin:32px 0 0;padding:0;list-style:none}
-.card{border-top:3px solid var(--ink);padding-top:16px}
-.card p{margin:10px 0 0;color:var(--mute);font-size:16px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:32px;counter-reset:s;padding:0;list-style:none}
+.note{color:var(--mute);font-size:14px;margin:12px 4px 2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:26px}
+.card{border-top:3px solid var(--ink);padding-top:14px}
+.card p{margin:8px 0 0;color:var(--mute);font-size:15.5px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin-top:26px;counter-reset:s;padding:0;list-style:none}
 .steps li{counter-increment:s}
-.steps li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--sun);color:#0d2b33;font:700 18px var(--display);margin-bottom:12px}
-.steps p{margin:8px 0 0;color:var(--mute);font-size:16px}
-.section-cta{margin-top:34px}
-.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:clamp(24px,4.5vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:32px 44px}
-.contact h2{color:var(--bg)}
-.contact p{color:var(--bg);opacity:.85;margin-top:16px}
-@supports (color:color-mix(in srgb,red,blue)){.contact p{opacity:1;color:color-mix(in srgb,var(--bg) 82%,var(--ink))}}
-.contact-links{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
-.contact-links a{display:inline-flex;align-items:center;gap:12px;color:var(--bg);text-decoration:none;font-weight:600;font-size:17px;min-height:44px}
-.contact-links a:hover span:last-child{text-decoration:underline;text-underline-offset:3px}
-.contact-links .ic{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:color-mix(in srgb,var(--bg) 14%,var(--ink));flex:none}
-.contact-links .ic svg{width:19px;height:19px}
-.contact-links small{display:block;font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
-.contact textarea,.contact input{width:100%;font:16px/1.5 var(--body);padding:12px 14px;border-radius:10px;border:2px solid transparent;background:var(--bg);color:var(--ink);margin-top:6px}
-.contact textarea{resize:vertical;min-height:120px}
-.contact label{font-size:14.5px;font-weight:600;display:block;margin-top:14px}
-.contact label:first-of-type{margin-top:0}
-.contact label .opt{font-weight:400;opacity:.75}
-.contact .btns{margin-top:18px}
-.contact .btn{border-color:var(--bg);color:var(--bg)}
-.contact .btn:hover{background:var(--bg);color:var(--ink)}
-.contact .btn.pri{border-color:var(--accent-btn);color:#fff}
-.contact .btn.pri:hover{background:var(--accent-btn-hover);border-color:var(--accent-btn-hover);color:#fff}
-.hint{font-size:14px;margin-top:12px;opacity:.85}
-.status{font-size:14.5px;margin-top:10px;min-height:22px;font-weight:600}
-.site-footer{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center;padding-block:32px 44px;color:var(--mute);font-size:14.5px;border-top:1px solid var(--line);margin-top:24px}
-.site-footer ul{display:flex;flex-wrap:wrap;gap:8px 20px;margin:0;padding:0;list-style:none}
-.site-footer a{color:var(--mute);text-underline-offset:3px}
-.site-footer a:hover{color:var(--ink)}
-@media (max-width:860px){.stage{grid-template-columns:minmax(0,1fr)}.list{max-height:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}}
-@media (max-width:600px){
- body{font-size:16.5px}
- .site-header{padding-block:16px 8px}
- .site-header nav{width:100%}
- .site-header nav ul{flex-wrap:nowrap;gap:14px;overflow-x:auto;scrollbar-width:none}
- .site-header nav a{font-size:14.5px;white-space:nowrap}
- .site-header nav a.nav-cta{padding:4px 12px}
- .list{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
- .item{font-size:14px;gap:7px;padding:8px 9px}
- .item i{width:10px;height:10px}
- .hero{padding-block:24px 20px}
- main>section{padding-block:40px}
- .demo{padding:10px;border-radius:20px;margin-inline:-6px}
- .bar{padding:2px 2px 12px}
- .chip{font-size:14px;padding:7px 12px;min-height:38px}
- .mapbox{overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;border-radius:14px}
- svg.map{width:680px;max-width:none}
- .swipe{display:block}
- .btns .btn{flex:1 1 100%}
-}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sun);color:#0d2b33;font:700 18px var(--display);margin-bottom:10px}
+.steps p{margin:6px 0 0;color:var(--mute);font-size:15.5px}
+.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:clamp(22px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.contact h2{color:var(--bg)}.contact p{color:color-mix(in srgb,var(--bg) 75%,var(--ink))}
+.contact textarea,.contact input{width:100%;font:16px var(--body);padding:12px;border-radius:10px;border:2px solid transparent;background:var(--bg);color:var(--ink);margin-top:8px}
+.contact label{font-size:14px;font-weight:600;display:block;margin-top:10px}
+.contact .btn{border-color:var(--bg);color:var(--bg);margin-top:12px}
+.contact .btn.pri{border-color:var(--accent);color:#fff}
+.status{font-size:14px;margin-top:8px;min-height:20px}
+footer{padding-block:28px 40px;color:var(--mute);font-size:14px}
+@media (max-width:860px){.stage{grid-template-columns:minmax(0,1fr)}.list{max-height:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.hd-cta{font:600 14px var(--body);padding:9px 16px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
+.hero{padding-block:28px 20px}
+.ba{--p:50%;position:relative;margin-top:34px;aspect-ratio:800/520;border-radius:26px;overflow:hidden;box-shadow:0 30px 70px -28px rgba(13,43,51,.55);background:#9db0a0;user-select:none;touch-action:pan-y}
+.ba .layer{position:absolute;inset:0}
+.ba .layer svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.ba .layer.top{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--p);width:0;pointer-events:none}
+.ba .handle::before{content:"";position:absolute;top:0;bottom:0;left:-1.5px;width:3px;background:#fff;box-shadow:0 0 0 1px rgba(13,43,51,.25)}
+.ba .knob{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:#fff;color:#0d2b33;display:grid;place-items:center;font:700 18px var(--display);box-shadow:0 8px 24px rgba(13,43,51,.35)}
+.ba .tag{position:absolute;top:14px;font:600 13px var(--body);padding:7px 13px;border-radius:999px;pointer-events:none;background:rgba(255,255,255,.94);color:#0d2b33}
+.ba .tag.l{left:14px}.ba .tag.r{right:14px;background:var(--accent);color:#fff}
+.ba .rng{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:3}
+.ba:focus-within .knob{outline:3px solid var(--teal);outline-offset:3px}
+.ba .layer svg .old-pin{display:none}
+svg.old .pin .em,svg.old .pin .halo{display:none}
+svg.old .pin .ring{fill:#6e7f78;stroke:#fff;stroke-width:2;r:6px}
+svg.old .pin path,svg.old .pin ellipse{display:none}
+svg.old .pin .lab{font:400 10.5px var(--body);fill:#33423b;stroke:none}
+.cmp{margin-top:26px;border-top:2px solid var(--ink)}
+.cmp .row{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(0,1.25fr);gap:22px;padding:20px 0;border-bottom:1px solid var(--line);align-items:start}
+.cmp .row.hd{padding:12px 0;color:var(--mute);font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.cmp .k{font-family:var(--display);font-weight:700;font-size:19px}
+.cmp .o{color:var(--mute)}
+.cmp .n{font-weight:500;position:relative;padding-left:18px}
+.cmp .n::before{content:"";position:absolute;left:0;top:.55em;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.devices{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1.15fr) minmax(0,1fr);gap:34px;align-items:end;margin-top:30px}
+.dv{margin:0;min-width:0}
+.dv figcaption{margin-top:14px;font-weight:600}.dv figcaption small{display:block;color:var(--mute);font-weight:400}
+.phone .scr{position:relative;aspect-ratio:320/533;border-radius:34px;overflow:hidden;border:9px solid #14262c;background:#14262c;box-shadow:0 26px 50px -24px rgba(13,43,51,.6)}
+.phone .scr svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.phone .ui{z-index:2;position:absolute;left:10px;right:10px;bottom:10px;background:#fff;color:#0d2b33;border-radius:16px;padding:10px 12px;font-size:13px;line-height:1.3;box-shadow:0 10px 24px rgba(0,0,0,.3)}
+.phone .ui b{display:block;font-family:var(--display);font-size:15px}
+.board .frame{position:relative;padding:14px 14px 18px;border-radius:14px;background:#7a4e2c;box-shadow:inset 0 0 0 3px #9a6a3f,0 26px 50px -24px rgba(13,43,51,.55)}
+.board .ttl{font:700 17px var(--display);color:#fff6e2;text-align:center;padding-bottom:10px;letter-spacing:.01em}
+.board .pic{aspect-ratio:800/520;border-radius:8px;overflow:hidden;position:relative}
+.board .pic svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.board .legs{display:flex;justify-content:space-between;padding:0 22px}.board .legs i{width:14px;height:34px;background:#5c3a20;display:block}
+.fold .sheet{position:relative;aspect-ratio:800/520;border-radius:6px;overflow:hidden;transform:rotate(-2.2deg);box-shadow:0 24px 44px -20px rgba(13,43,51,.55)}
+.fold .sheet svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.fold .sheet::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,0) 0,rgba(255,255,255,0) 32.6%,rgba(0,0,0,.16) 33.3%,rgba(255,255,255,.14) 34%,rgba(255,255,255,0) 66%,rgba(0,0,0,.16) 66.7%,rgba(255,255,255,.14) 67.4%,rgba(255,255,255,0) 100%);pointer-events:none}
+.cfg{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:22px;margin-top:26px;align-items:start}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.opt{text-align:left;font:inherit;color:var(--ink);background:var(--panel);border:2px solid var(--line);border-radius:16px;padding:14px 16px 14px 48px;cursor:pointer;position:relative;transition:border-color .15s,background .15s}
+.opt::before{content:"";position:absolute;left:16px;top:17px;width:20px;height:20px;border-radius:6px;border:2px solid var(--line);background:var(--bg)}
+.opt[aria-pressed="true"]{border-color:var(--ink);background:color-mix(in srgb,var(--sun) 22%,var(--panel))}
+.opt[aria-pressed="true"]::before{background:var(--ink);border-color:var(--ink)}
+.opt[aria-pressed="true"]::after{content:"";position:absolute;left:22px;top:21px;width:8px;height:4px;border:solid var(--bg);border-width:0 0 2.5px 2.5px;transform:rotate(-45deg)}
+.opt b{display:block;font-family:var(--display);font-size:17px}
+.opt span{display:block;color:var(--mute);font-size:14px;margin-top:2px}
+.opt:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.sum{position:sticky;top:12px;background:var(--ink);color:var(--bg);border-radius:20px;padding:22px}
+.sum h3{color:var(--bg)}.sum ul{margin:12px 0 16px;padding-left:18px;color:color-mix(in srgb,var(--bg) 82%,var(--ink))}
+.sum .btn{border-color:var(--accent);background:var(--accent);color:#fff;width:100%}
+@media (max-width:900px){.devices{grid-template-columns:minmax(0,1fr);justify-items:center}.devices .phone{width:min(230px,70%)}.devices .board,.devices .fold{width:100%}.cfg{grid-template-columns:minmax(0,1fr)}.sum{position:static}.cmp .row{grid-template-columns:minmax(0,1fr);gap:6px}.cmp .row.hd{display:none}.cmp .o::before{content:"Heute: ";font-weight:600;color:var(--ink)}}
+
+.rimg{position:relative;aspect-ratio:2400/1792;border-radius:26px;overflow:hidden;background:var(--line);box-shadow:0 30px 70px -28px rgba(13,43,51,.55)}
+.rimg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.rth{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.rt{padding:0;border:3px solid transparent;border-radius:14px;overflow:hidden;cursor:pointer;width:96px;aspect-ratio:4/3;background:var(--line)}
+.rt img{width:100%;height:100%;object-fit:cover;display:block}
+.rt[aria-pressed="true"]{border-color:var(--accent)}
+.rt:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.real figcaption{color:var(--mute);font-size:14px;margin-top:10px}
+
+[hidden]{display:none!important}
+.ba.real{aspect-ratio:2400/1792}
+.ba.real .layer img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ba.real .layer img.deg{filter:grayscale(1) contrast(.7) brightness(1.18) blur(.9px)}
+.rwrap{position:relative;aspect-ratio:2400/1792;background:var(--line);touch-action:none}
+.rwrap>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.rpin{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;padding:0;border-radius:50%;border:3px solid #fff;background:var(--c);display:grid;place-items:center;font-size:16px;line-height:1;cursor:pointer;box-shadow:0 6px 14px rgba(0,0,0,.35);transition:opacity .2s}
+.rpin .l{position:absolute;top:calc(100% + 5px);left:50%;transform:translateX(-50%);white-space:nowrap;font:700 12px var(--body);background:#fff;color:#0d2b33;padding:3px 9px;border-radius:999px;box-shadow:0 3px 10px rgba(0,0,0,.25);display:none;pointer-events:none}
+.rpin:hover .l,.rpin.sel .l,.rpin:focus-visible .l{display:block}
+.rpin.sel{outline:3px solid #0d2b33;z-index:2}
+.rpin:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.rcal{width:100%;font:12px ui-monospace,monospace;border:0;border-top:1px solid var(--line);padding:8px;background:var(--panel);color:var(--ink)}
+@media (max-width:600px){.rpin{width:28px;height:28px;font-size:13px}}
 </style>
+
 </head>
-<body id="top">
-<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+<body>
 <div class="w">
-<header class="site-header">
-  <a class="logo" href="#top" aria-label="Map2follow – zum Seitenanfang"><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="16" cy="16" r="15" fill="#ff5a3c"/><path d="M7 21 C11 9 15 23 19 12 S25 14 25 14" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="1 5"/><circle cx="25" cy="14" r="3" fill="#ffc43d"/></svg>Map2follow</a>
-  <nav aria-label="Hauptnavigation"><ul><li><a href="#erkunden">Karte erkunden</a></li><li><a href="#leistungen">Leistungen</a></li><li><a href="#ablauf">Ablauf</a></li><li><a class="nav-cta" href="#kontakt">Kontakt</a></li></ul></nav>
+<header>
+  <div class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#ff5a3c"/><path d="M7 21 C11 9 15 23 19 12 S25 14 25 14" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="1 5"/><circle cx="25" cy="14" r="3" fill="#ffc43d"/></svg>Map2follow</div>
+  <nav aria-label="Hauptnavigation"><a href="#upgrade">Das Upgrade</a><a href="#einsatz">Einsatz</a><a href="#erkunden">Karte erkunden</a><a href="#paket">Ihr Paket</a><a class="hd-cta" href="#kontakt">Offerte anfragen</a></nav>
 </header>
 
-<main id="inhalt" tabindex="-1">
 <div class="hero">
-  <h1>Parkpläne, die Gäste gern in die Hand nehmen.</h1>
-  <p class="lead">Wir gestalten Pläne für Freizeitparks und Attraktionsbetriebe. Farbig, übersichtlich und so gebaut, dass sich Ihre Gäste vom Eingang bis zur letzten Attraktion zurechtfinden.</p>
-  <div class="btns"><a class="btn pri" href="#kontakt">Offerte anfragen</a><a class="btn" href="#erkunden">Beispielkarte erkunden</a></div>
-  <ul class="facts" aria-label="Auf einen Blick"><li>Unverbindliche Offerte</li><li>Vier Jahreszeiten</li><li>Mehrere Sprachen</li><li>Für Druck, Website und Bildschirm</li></ul>
+  <div class="eyebrow">Parkpläne für Freizeitparks</div>
+  <h1>Aus einem Plan wird ein Erlebnis.</h1>
+  <p class="lead">Derselbe Park, derselbe Inhalt. Aber eine Karte, die Ihre Gäste gern ansehen, mitnehmen und mit der sie sich sofort zurechtfinden.</p>
+  <div class="btns"><a class="btn pri" href="#paket">Upgrade zusammenstellen</a><a class="btn" href="#kontakt">Offerte anfragen</a></div>
+  <div class="ba" id="ba">
+    <div class="layer" id="baAfter"></div>
+    <div class="layer top" id="baBefore"></div>
+    <div class="handle"><div class="knob" aria-hidden="true">&#8596;</div></div>
+    <span class="tag l">Typischer Plan heute</span><span class="tag r">Mit Map2follow</span>
+    <input class="rng" id="baR" type="range" min="3" max="97" value="50" aria-label="Plan vorher und nachher vergleichen">
+  </div>
+  <div class="rth" id="rth" role="group" aria-label="Variante wählen" hidden></div>
+  <p class="note" id="baNote">Ziehen Sie den Regler. Links ein typischer, nüchterner Plan, rechts dieselbe Fläche als Map2follow-Karte. Beispielpark mit erfundenen Orten.</p>
 </div>
 
-<section id="erkunden" aria-labelledby="h-erkunden">
-  <p class="eyebrow">Zum Ausprobieren</p>
-  <h2 id="h-erkunden">Eine Karte, vier Jahreszeiten</h2>
-  <p class="lead">Wechseln Sie die Saison, filtern Sie nach Bahnen, Essen oder Service und tippen Sie auf einen Ort. So könnte Ihr Plan aussehen.</p>
-  <div class="demo">
+<section id="upgrade">
+  <div class="eyebrow">Das Upgrade</div>
+  <h2>Was sich für Ihre Gäste ändert</h2>
+  <div class="cmp">
+    <div class="row hd"><div></div><div>Heute</div><div>Mit Map2follow</div></div>
+    <div class="row"><div class="k">Orientierung</div><div class="o">Gäste suchen, fragen am Eingang nach dem Weg und drehen den Plan im Kreis.</div><div class="n">Attraktionen, Gastronomie und WC sind mit Symbolen und Farben sofort zu erkennen.</div></div>
+    <div class="row"><div class="k">Wirkung</div><div class="o">Ein sachlicher Lageplan, den man nach dem Besuch wegwirft.</div><div class="n">Eine illustrierte Karte, die Lust auf den Tag macht und zum Aufbewahren einlädt.</div></div>
+    <div class="row"><div class="k">Jahresverlauf</div><div class="o">Ein Plan für alle Jahreszeiten, auch wenn der Park im Winter ganz anders aussieht.</div><div class="n">Vier Versionen: Frühling, Sommer, Herbst und Winter, passend zur jeweiligen Stimmung im Park.</div></div>
+    <div class="row"><div class="k">Einsatz</div><div class="o">Meist nur als Druck am Eingang.</div><div class="n">Eingangstafel, Faltplan, Website und Handy aus einer Gestaltung, in einem einheitlichen Auftritt.</div></div>
+    <div class="row"><div class="k">Eindruck</div><div class="o">Der Plan wirkt veraltet und passt nicht zu Ihren Attraktionen.</div><div class="n">Der Plan zeigt die Qualität, die Gäste im Park erwartet.</div></div>
+  </div>
+</section>
+
+<section id="einsatz">
+  <div class="eyebrow">Einsatz</div>
+  <h2>Eine Karte, überall im Park</h2>
+  <p class="lead">Aus einer Gestaltung entstehen alle Formate. Gäste erkennen Ihren Park auf der Tafel am Eingang, im Faltplan und auf dem Handy wieder.</p>
+  <div class="devices">
+    <figure class="dv phone"><div class="scr" id="mkPhone"><div class="ui"><b>Seilbahn</b>Der Weg vom Eingang ist eingezeichnet.</div></div><figcaption>Auf dem Handy<small>mit Weg zum Ziel</small></figcaption></figure>
+    <figure class="dv board"><div class="frame"><div class="ttl">Willkommen im Beispielpark</div><div class="pic" id="mkBoard"></div></div><div class="legs"><i></i><i></i></div><figcaption>Eingangstafel<small>gross, für Eingang und Wegweiser</small></figcaption></figure>
+    <figure class="dv fold"><div class="sheet" id="mkFold"></div><figcaption>Faltplan<small>zum Mitnehmen, in der Herbstversion</small></figcaption></figure>
+  </div>
+</section>
+
+<section id="erkunden">
+  <div class="eyebrow">Zum Ausprobieren</div>
+  <h2>Eine Karte, vier Jahreszeiten</h2>
+  <p class="lead">Filtern Sie nach Bahnen, Essen oder Service und tippen Sie auf einen Ort. So könnte Ihr Plan aussehen.</p>
+  <div class="demo" style="margin-top:22px">
     <div class="bar">
-      <div class="chips" id="seasons" role="group" aria-label="Jahreszeit wählen"></div>
-      <div class="chips" id="cats" role="group" aria-label="Nach Kategorie filtern"></div>
+      <div class="chips" id="seasons" role="group" aria-label="Jahreszeit"></div>
+      <div class="chips" id="cats" role="group" aria-label="Kategorie"></div>
     </div>
     <div class="stage">
-      <div>
-        <div class="mapbox" id="mapbox"><svg class="map" id="map" viewBox="0 0 800 520" role="img" aria-labelledby="map-title"><title id="map-title">Illustrierte Beispielkarte eines Freizeitparks mit See, Dampfbahn, Bergbahn, Seilbahn, Märchendorf und Riesenrad</title></svg></div>
-        <p class="swipe" aria-hidden="true">← Karte seitlich verschieben →</p>
-      </div>
-      <div class="side"><div class="info" id="info" aria-live="polite"></div><div class="list" id="list" role="group" aria-label="Orte im Beispielpark"></div></div>
+      <div class="mapbox" id="svgbox"><svg class="map" id="map" viewBox="0 0 800 520" role="img" aria-label="Beispielkarte eines Freizeitparks"></svg></div>
+      <div class="mapbox" id="rmap" hidden><div class="rwrap" id="rwrap"></div><textarea id="rcal" class="rcal" rows="3" readonly hidden aria-label="Koordinaten der Markierungen"></textarea></div>
+      <div class="side"><div class="info" id="info" aria-live="polite"></div><div class="list" id="list"></div></div>
     </div>
-    <noscript><p class="note">Die interaktive Beispielkarte benötigt JavaScript.</p></noscript>
     <p class="note">Beispielpark mit erfundenen Orten. Ihre Karte entsteht aus Ihrem Gelände, Ihren Attraktionen und Ihrem Auftritt.</p>
   </div>
 </section>
 
-<section id="leistungen" aria-labelledby="h-leistungen">
-  <p class="eyebrow">Leistungen</p>
-  <h2 id="h-leistungen">Was wir für Ihren Park umsetzen</h2>
-  <ul class="cards">
-    <li class="card"><h3>Plan überarbeiten</h3><p>Ihr bestehender Plan wird moderner, klarer und einladender. Der Inhalt bleibt, der Eindruck ändert sich.</p></li>
-    <li class="card"><h3>Illustrierte Parkpläne</h3><p>Farbenfroh und detailreich, passend zur Welt Ihres Parks, mit gut lesbaren Beschriftungen und Legende.</p></li>
-    <li class="card"><h3>Saisonale Versionen</h3><p>Frühling, Sommer, Herbst und Winter. So bleibt Ihr Plan das ganze Jahr aktuell und stimmungsvoll.</p></li>
-    <li class="card"><h3>Individuelle Anpassungen</h3><p>Mehrere Sprachen, eigene Legenden sowie Formate für Druck, Website und Bildschirm.</p></li>
-  </ul>
+<section id="paket">
+  <div class="eyebrow">Ihr Paket</div>
+  <h2>Stellen Sie Ihr Upgrade zusammen</h2>
+  <p class="lead">Wählen Sie, was Ihr Plan können soll. Wir erstellen daraus eine Offerte, die zu Ihrem Park passt.</p>
+  <div class="cfg">
+    <div class="opts" id="opts"></div>
+    <aside class="sum" aria-live="polite"><h3>Ihr Upgrade</h3><ul id="sumL"></ul><button class="btn" type="button" id="sumB">In die Anfrage übernehmen</button></aside>
+  </div>
 </section>
 
-<section id="ablauf" aria-labelledby="h-ablauf">
-  <p class="eyebrow">Ablauf</p>
-  <h2 id="h-ablauf">In drei Schritten zur Offerte</h2>
+<section id="ablauf">
+  <div class="eyebrow">Ablauf</div>
+  <h2>In drei Schritten zur Offerte</h2>
   <ol class="steps">
     <li><h3>Plan senden</h3><p>Zeigen Sie uns, was Sie verbessern oder neu haben möchten. Ein Screenshot oder Foto genügt.</p></li>
     <li><h3>Offerte erhalten</h3><p>Wir prüfen Ihre Wünsche und unterbreiten Ihnen ein auf Sie zugeschnittenes Angebot.</p></li>
     <li><h3>Umsetzung</h3><p>Nach Ihrer Freigabe gestalten wir den Plan und liefern ihn in den gewünschten Formaten.</p></li>
   </ol>
-  <div class="section-cta"><a class="btn pri" href="#kontakt">Jetzt Plan senden</a></div>
 </section>
 
-<section id="kontakt" aria-labelledby="h-kontakt">
+<section id="kontakt">
   <div class="contact">
     <div>
-      <h2 id="h-kontakt">Zeigen Sie uns Ihren Plan</h2>
-      <p>Die Anfrage ist unverbindlich. Beschreiben Sie kurz, was verbessert oder neu gemacht werden soll, und senden Sie uns den Text zusammen mit Ihrem aktuellen Plan per E-Mail.</p>
-      <ul class="contact-links">
-        <li><a href="mailto:map2follow@gmail.com?subject=Anfrage%20Parkplan"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span><small>E-Mail</small>map2follow@gmail.com</span></a></li>
-        <li><a href="tel:+41772329394"><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Telefon</small>+41 77 232 93 94</span></a></li>
-      </ul>
+      <h2>Zeigen Sie uns Ihren Plan. Wir zeigen Ihnen das Upgrade.</h2>
+      <p style="margin-top:14px">Die Anfrage ist unverbindlich. Beschreiben Sie kurz, was verbessert oder neu gemacht werden soll, und senden Sie uns den Text zusammen mit Ihrem aktuellen Plan per E-Mail.</p>
+      <p style="margin-top:14px"><strong>E-Mail:</strong> map2follow@gmail.com<br><strong>Telefon:</strong> +41 77 232 93 94</p>
     </div>
-    <form id="f" novalidate>
-      <label for="n">Name des Parks</label><input id="n" name="park" autocomplete="organization">
-      <label for="p">Ihr Name <span class="opt">(optional)</span></label><input id="p" name="name" autocomplete="name">
-      <label for="w">Ihre Wünsche</label><textarea id="w" name="wuensche" rows="4" placeholder="Zum Beispiel: Plan modernisieren, vier Jahreszeiten, zusätzlich auf Englisch"></textarea>
-      <div class="btns"><button class="btn pri" type="submit">E-Mail vorbereiten</button><button class="btn" type="button" id="copy">Text kopieren</button></div>
-      <p class="hint">Ihr E-Mail-Programm öffnet sich mit dem fertigen Text. Hängen Sie einfach Ihren aktuellen Plan an.</p>
+    <form id="f">
+      <label for="n">Name des Parks</label><input id="n" autocomplete="organization">
+      <label for="w">Ihre Wünsche</label><textarea id="w" rows="4" placeholder="Zum Beispiel: Plan modernisieren, vier Jahreszeiten, zusätzlich auf Englisch"></textarea>
+      <button class="btn pri" type="submit">Anfragetext kopieren</button>
       <div class="status" id="st" role="status"></div>
     </form>
   </div>
 </section>
-</main>
 
-<footer class="site-footer">
-  <p>© <span id="yr">2026</span> Map2follow · Parkpläne für Freizeitparks und Attraktionsbetriebe</p>
-  <ul><li><a href="mailto:map2follow@gmail.com">Kontakt</a></li><li><a href="impressum.html">Impressum</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul>
-</footer>
+<footer>© Map2follow · Parkpläne für Freizeitparks und Attraktionsbetriebe</footer>
 </div>
 
 <script>
@@ -272,7 +290,7 @@ let R=7;const rnd=()=>(R=(R*16807)%2147483647)/2147483647;
 const ISL="M150,250 C130,170 230,120 300,100 C380,60 470,90 560,120 C650,150 730,230 720,330 C715,400 640,440 560,440 C500,445 470,470 420,455 C350,440 300,490 230,450 C170,420 160,330 150,250 Z";
 const LAKE="M0,380 C70,430 130,500 200,520 L800,520 L800,330 C770,420 700,470 600,470 C520,470 480,500 430,495 C350,490 300,470 250,480 C180,490 100,430 0,380 Z";
 const TRACK="M232,300 C232,200 320,110 450,140 C580,170 680,250 665,340 C655,410 560,425 470,420 C390,415 300,440 262,405 C238,380 226,335 232,300 Z";
-const mt=svg.querySelector("title");svg.innerHTML=`<defs>
+svg.innerHTML=`<defs>
 <linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--lake)"/><stop offset="1" style="stop-color:var(--lake2)"/></linearGradient>
 <radialGradient id="gh" cx=".35" cy=".25" r=".85"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
 <radialGradient id="sg" cx=".88" cy=".05" r=".8"><stop offset="0" style="stop-color:var(--sunc)"/><stop offset="1" style="stop-color:var(--sunc);stop-opacity:0"/></radialGradient>
@@ -283,7 +301,7 @@ const mt=svg.querySelector("title");svg.innerHTML=`<defs>
 <pattern id="fd" width="26" height="26" patternUnits="userSpaceOnUse" patternTransform="rotate(18)"><rect width="13" height="26" fill="#fff" opacity=".18"/></pattern>
 <clipPath id="isl"><path d="${ISL}"/></clipPath>
 </defs>`;
-svg.prepend(mt);const L={};["ground","lake","island","ground2","paths","tracks","flora","build","people","route","fx","sky","pins","ui"].forEach(k=>L[k]=el("g",{},svg));
+const L={};["ground","lake","island","ground2","paths","tracks","flora","build","people","route","fx","sky","pins","ui"].forEach(k=>L[k]=el("g",{"data-l":k},svg));
 const FILL=v=>`style="fill:var(--${v})"`;
 // ---- ground: fields, hills
 L.ground.innerHTML=`<rect width="800" height="520" ${FILL("land")}/>
@@ -400,15 +418,15 @@ function fx(){const q=SEAS[ses].fx;let h="";for(let i=0;i<q.n;i++){const x=rnd()
  L.fx.innerHTML=`<g style="pointer-events:none">${h}</g>`}
 // ---- pins and list
 const gPins=L.pins;
-P.forEach(p=>{const col=CATS[p.c].c,g=el("g",{class:"pin","data-id":p.id,transform:`translate(${p.x} ${p.y})`},gPins);
+P.forEach(p=>{const col=CATS[p.c].c,g=el("g",{class:"pin",tabindex:0,role:"button","aria-label":p.n,"data-id":p.id,transform:`translate(${p.x} ${p.y})`},gPins);
  el("ellipse",{cx:1,cy:17,rx:11,ry:3.4,fill:"#0d2b33",opacity:".3"},g);
  el("path",{d:"M-6,12 L0,22 L6,12 Z",fill:col},g);
  el("circle",{class:"ring",r:16,fill:col,stroke:"#fff","stroke-width":3},g);
  el("text",{class:"em"},g).textContent=p.ic;
  const lt=el("text",{class:"lab",y:p.lp?5:36,x:p.lp==="l"?-23:p.lp==="r"?23:0},g);lt.textContent=p.n;if(p.lp)lt.style.textAnchor=p.lp==="l"?"end":"start";
- g.onclick=()=>{cur=p.id;apply()};
- const bt=document.createElement("button");bt.className="item";bt.dataset.id=p.id;bt.setAttribute("aria-pressed","false");bt.type="button";bt.innerHTML=`<i style="background:${col}" aria-hidden="true"></i><span><span aria-hidden="true">${p.ic}</span> ${p.n}</span>`;bt.onclick=()=>{cur=p.id;apply()};$("list").appendChild(bt)});
-function mkChips(box,items,set){items.forEach(([k,n])=>{const bt=document.createElement("button");bt.className="chip";bt.type="button";bt.textContent=n;bt.dataset.k=k;bt.onclick=()=>{set(k);apply()};box.appendChild(bt)})}
+ g.onclick=()=>{cur=p.id;apply()};g.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();cur=p.id;apply()}};
+ const bt=document.createElement("button");bt.className="item";bt.dataset.id=p.id;bt.setAttribute("aria-pressed","false");bt.innerHTML=`<i style="background:${col}"></i><span>${p.ic} ${p.n}</span>`;bt.onclick=()=>{cur=p.id;apply()};$("list").appendChild(bt)});
+function mkChips(box,items,set){items.forEach(([k,n])=>{const bt=document.createElement("button");bt.className="chip";bt.textContent=n;bt.dataset.k=k;bt.onclick=()=>{set(k);apply()};box.appendChild(bt)})}
 mkChips($("seasons"),Object.entries(SEAS).map(([k,v])=>[k,v.n]),k=>{ses=k});
 mkChips($("cats"),[["alle","Alle"],...Object.entries(CATS).map(([k,v])=>[k,v.n])],k=>{cat=k;if(cur&&k!=="alle"&&P.find(x=>x.id===cur).c!==k)cur=null});
 let lastS=null;
@@ -418,29 +436,103 @@ function apply(){const q=SEAS[ses];for(const k in q.v)svg.style.setProperty("--"
  document.querySelectorAll(".pin").forEach(g=>{const p=P.find(x=>x.id===g.dataset.id);g.style.opacity=(cat==="alle"||p.c===cat||p.id==="eingang")?1:.22;g.classList.toggle("sel",g.dataset.id===cur)});
  document.querySelectorAll(".item").forEach(x=>{const p=P.find(y=>y.id===x.dataset.id);x.hidden=cat!=="alle"&&p.c!==cat;x.setAttribute("aria-pressed",x.dataset.id===cur)});
  const p=P.find(x=>x.id===cur);route(p);
- $("info").innerHTML=p?`<b><span aria-hidden="true">${p.ic}</span> ${p.n}</b><span>${CATS[p.c].n}. ${p.d}${p.id==="eingang"?"":" Der Weg vom Eingang ist eingezeichnet."}</span>`:`<b>Wohin soll es gehen?</b><span>Tippen Sie auf einen Ort in der Karte oder in der Liste.</span>`}
+ document.querySelectorAll(".rpin").forEach(g=>{const q=P.find(x=>x.id===g.dataset.id);g.classList.toggle("sel",g.dataset.id===cur);g.style.opacity=(cat==="alle"||q.c===cat||q.id==="eingang")?1:.25});
+ $("info").innerHTML=p?`<b>${p.ic} ${p.n}</b><span>${CATS[p.c].n}. ${p.d}${p.id==="eingang"||!$("rmap").hidden?"":" Der Weg vom Eingang ist eingezeichnet."}</span>`:`<b>Wohin soll es gehen?</b><span>Tippen Sie auf einen Ort in der Karte oder in der Liste.</span>`}
 apply();
 
-// Animationen anhalten, wenn die Karte nicht sichtbar ist (spart Akku/CPU) oder reduzierte Bewegung gewünscht wird
-const rm=window.matchMedia("(prefers-reduced-motion: reduce)");
-let vis=true;const anim=()=>{(!vis||rm.matches)?svg.pauseAnimations():svg.unpauseAnimations()};
-if("IntersectionObserver"in window)new IntersectionObserver(es=>{vis=es[0].isIntersecting;anim()},{rootMargin:"100px"}).observe(svg);
-rm.addEventListener?.("change",anim);anim();
-// Mobile: Karte zu Beginn mittig zeigen
-const mb=$("mapbox");if(mb.scrollWidth>mb.clientWidth)mb.scrollLeft=(mb.scrollWidth-mb.clientWidth)/2;
-// Kontakt
-const MAIL="map2follow@gmail.com";
-const txt=()=>`Guten Tag\n\nGerne möchte ich eine unverbindliche Offerte für einen Parkplan anfragen.\n\nPark: ${$("n").value.trim()||"-"}\nName: ${$("p").value.trim()||"-"}\nWünsche: ${$("w").value.trim()||"-"}\n\nUnseren aktuellen Plan finden Sie im Anhang.\n\nFreundliche Grüsse`;
+// ---- snapshots of the map: before/after slider and mockups
+const OLD={land:"#a9b8a0",land2:"#a9b8a0",park:"#88a37c",park2:"#88a37c",side:"#88a37c",rim:"#5f7c58",lake:"#9db9c1",lake2:"#9db9c1",tree1:"#5f8a5a",tree2:"#5f8a5a",tree3:"#5f8a5a",fl1:"#88a37c",fl2:"#88a37c",snowroof:"0",ice:"0",lily:"0",sun:"0",sunc:"#fff"};
+function snap(season,o={}){
+ if(o.sel)route(P.find(x=>x.id===o.sel));
+ const c=svg.cloneNode(true);
+ if(o.sel)route(P.find(x=>x.id===cur));
+ c.removeAttribute("id");c.removeAttribute("role");c.removeAttribute("aria-label");c.setAttribute("aria-hidden","true");
+ const vars=o.old?OLD:SEAS[season].v;for(const k in vars)c.style.setProperty("--"+k,vars[k]);
+ c.querySelectorAll(".pin").forEach(g=>{g.removeAttribute("tabindex");g.removeAttribute("role");g.removeAttribute("aria-label");g.style.opacity=1;g.classList.remove("sel");g.style.pointerEvents="none"});
+ if(o.sel){const g=c.querySelector('.pin[data-id="'+o.sel+'"]');if(g)g.classList.add("sel")}
+ if(o.old){c.classList.add("old");["flora","build","people","fx","sky","tracks","ui","route"].forEach(k=>{const g=c.querySelector('[data-l="'+k+'"]');if(g)g.remove()});
+  const is=c.querySelector('[data-l="island"]');if(is){[3,1,0].forEach(i=>is.children[i]&&is.children[i].remove())}
+  c.style.filter="saturate(.55) contrast(.92)"}
+ if(o.view)c.setAttribute("viewBox",o.view);
+ if(o.slice)c.setAttribute("preserveAspectRatio","xMidYMid slice");
+ return c}
+function place(box,c,pause){box.appendChild(c);if(pause&&c.pauseAnimations)c.pauseAnimations()}
+place($("baAfter"),snap("sommer"));
+place($("baBefore"),snap("sommer",{old:true}),true);
+place($("mkPhone"),snap("sommer",{sel:"seilbahn",view:"385 -5 320 533"}),true);
+place($("mkBoard"),snap("fruehling"),true);
+place($("mkFold"),snap("herbst"),true);
+// slider
+const ba=$("ba"),rg=$("baR");
+const setP=v=>ba.style.setProperty("--p",v+"%");
+rg.addEventListener("input",()=>setP(rg.value));
+if(!matchMedia("(prefers-reduced-motion:reduce)").matches&&"IntersectionObserver" in window){
+ let done=false;new IntersectionObserver((en,ob)=>{if(done||!en[0].isIntersecting)return;done=true;ob.disconnect();
+  const t0=performance.now(),D=2600;(function f(t){const k=Math.min(1,(t-t0)/D),v=50+Math.sin(k*Math.PI*2)*(1-k*.4)*30;setP(v);rg.value=v;if(k<1)requestAnimationFrame(f);else{setP(50);rg.value=50}})(t0)},{threshold:.6}).observe(ba)}
+
+// ---- realistic park plan: replaces the illustration wherever the image loads (local file first, CDN as fallback)
+const CDN="https://cdn.openart.ai/openart-ai/production/2026-11/create-image/t2NL8RWXeJubJ4Ua1a0H/";
+const RI=[["bilder/realistisch-1.png",CDN+"image_1794260717599_82ae5b87_1794260718463_339af2a8.png"],
+ ["bilder/realistisch-2.png",CDN+"image_1794260699331_a98c8fe5_1794260701646_83f57ac0.png"],
+ ["bilder/realistisch-3.png",CDN+"image_1794260700292_2e9244b8_1794260700624_b5491e3b.png"],
+ ["bilder/realistisch-4.png",CDN+"image_1794260696463_3fee36de_1794260697578_c3ff39a2.png"]];
+// pin positions in percent of the image (x,y); adjust with the #pins mode
+const RPOS={eingang:[58,77],park:[44,93],zahnrad:[38,12],dorf:[42,28],dampf:[58,41],aussicht:[27,62],seilbahn:[92,61],laden:[37,33],crepes:[38,45],buffet:[53,37],snack:[86,56],wc1:[40,58],wc2:[75,77]};
+const got={};let rsel=null,rbuilt=false;
+const mkImg=(src,alt,cls)=>{const m=new Image();m.src=src;m.alt=alt||"";if(cls)m.className=cls;return m};
+function buildRPins(){if(rbuilt)return;rbuilt=true;const w=$("rwrap"),cal=location.hash==="#pins";
+ P.forEach(p=>{const pos=RPOS[p.id];if(!pos)return;const b=document.createElement("button");b.type="button";b.className="rpin";b.dataset.id=p.id;b.style.setProperty("--c",CATS[p.c].c);b.style.left=pos[0]+"%";b.style.top=pos[1]+"%";b.setAttribute("aria-label",p.n);
+  b.innerHTML=`${p.ic}<span class="l">${p.n}</span>`;
+  if(cal){b.onpointerdown=e=>{e.preventDefault();b.setPointerCapture(e.pointerId);b.dataset.drag=1};
+   b.onpointermove=e=>{if(!b.dataset.drag)return;const r=w.getBoundingClientRect();const x=Math.max(0,Math.min(100,(e.clientX-r.left)/r.width*100)),y=Math.max(0,Math.min(100,(e.clientY-r.top)/r.height*100));b.style.left=x+"%";b.style.top=y+"%";RPOS[p.id]=[Math.round(x),Math.round(y)];$("rcal").value=JSON.stringify(RPOS)};
+   b.onpointerup=()=>{delete b.dataset.drag}}
+  else b.onclick=()=>{cur=p.id;apply()};
+  w.appendChild(b)});
+ if(cal){$("rcal").hidden=false;$("rcal").value=JSON.stringify(RPOS)}}
+function rrender(){const ks=Object.keys(got).map(Number).sort();if(!ks.length)return;
+ if(rsel===null||!(rsel in got))rsel=ks[0];const src=got[rsel],alt="Fotorealistische Parkkarte, Variante "+(rsel+1);
+ // hero
+ ba.classList.add("real");$("baAfter").replaceChildren(mkImg(src,alt));$("baBefore").replaceChildren(mkImg(src,"","deg"));
+ document.querySelector(".ba .tag.l").textContent="Einfache Darstellung";
+ $("baNote").textContent="Ziehen Sie den Regler. Links dieselbe Karte vereinfacht, rechts als fotorealistische Map2follow-Karte. Beispielpark mit erfundenen Orten.";
+ // thumbnails
+ const th=$("rth");th.replaceChildren();th.hidden=ks.length<2;
+ ks.forEach(k=>{const b=document.createElement("button");b.type="button";b.className="rt";b.setAttribute("aria-label","Variante "+(k+1));b.setAttribute("aria-pressed",k===rsel);b.appendChild(mkImg(got[k],""));b.onclick=()=>{rsel=k;rrender()};th.appendChild(b)});
+ // demo map
+ $("svgbox").hidden=true;$("rmap").hidden=false;$("seasons").hidden=true;
+ document.querySelector("#erkunden h2").textContent="Die Karte zum Anklicken";
+ const w=$("rwrap");let im=w.querySelector("img");if(!im){im=mkImg(src,alt);w.prepend(im)}else{im.src=src;im.alt=alt}
+ buildRPins();apply();
+ // mockups
+ $("mkBoard").replaceChildren(mkImg(src,""));$("mkFold").replaceChildren(mkImg(src,""));}
+RI.forEach((u,i)=>{const im=new Image();let st=0;im.onload=()=>{got[i]=im.src;rrender()};im.onerror=()=>{if(st++===0)im.src=u[1]};im.src=u[0]});
+// package builder
+const OPT=[
+ {k:"base",n:"Illustrierter Parkplan",d:"Farbig und detailreich, mit Legende und gut lesbaren Beschriftungen.",fix:1},
+ {k:"real",n:"Fotorealistische Gestaltung",d:"Realistische Schrägansicht statt Illustration."},
+ {k:"saison",n:"Vier Jahreszeiten",d:"Frühling, Sommer, Herbst und Winter als eigene Versionen."},
+ {k:"sprachen",n:"Mehrere Sprachen",d:"Zum Beispiel Deutsch, Französisch und Englisch."},
+ {k:"tafel",n:"Eingangstafel",d:"Grosse Fassung für Eingang und Wegweiser."},
+ {k:"flyer",n:"Faltplan",d:"Handliche Fassung zum Mitnehmen."},
+ {k:"digital",n:"Digitale Version",d:"Für Website, App und Bildschirme im Park."},
+ {k:"highlights",n:"Highlights hervorgehoben",d:"Top-Attraktionen, Gastronomie und WC auf einen Blick."}];
+const chosen=new Set(["base"]);
+OPT.forEach(o=>{const b=document.createElement("button");b.type="button";b.className="opt";b.dataset.k=o.k;b.setAttribute("aria-pressed",o.fix?"true":"false");if(o.fix)b.setAttribute("aria-disabled","true");
+ b.innerHTML=`<b>${o.n}</b><span>${o.d}</span>`;
+ b.onclick=()=>{if(o.fix)return;chosen.has(o.k)?chosen.delete(o.k):chosen.add(o.k);sum()};$("opts").appendChild(b)});
+function names(){return OPT.filter(o=>chosen.has(o.k)).map(o=>o.n)}
+function sum(){document.querySelectorAll(".opt").forEach(b=>b.setAttribute("aria-pressed",chosen.has(b.dataset.k)));
+ $("sumL").innerHTML=names().map(n=>`<li>${n}</li>`).join("")}
+sum();
+$("sumB").onclick=()=>{const w=$("w");w.value="Gewünschte Bausteine: "+names().join(", ")+".";
+ const k=document.getElementById("kontakt");k.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"center"});$("n").focus({preventScroll:true})};
+// contact
 $("f").addEventListener("submit",e=>{e.preventDefault();
- const park=$("n").value.trim();
- const subj="Anfrage Parkplan"+(park?" – "+park:"");
- window.location.href=`mailto:${MAIL}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(txt())}`;
- $("st").textContent="Ihr E-Mail-Programm sollte sich jetzt öffnen. Falls nicht, nutzen Sie «Text kopieren» und senden Sie ihn an "+MAIL+"."});
-$("copy").addEventListener("click",()=>{const t=txt();
- const ok=()=>$("st").textContent="Text kopiert. Fügen Sie ihn in eine E-Mail an "+MAIL+" ein und hängen Sie Ihren Plan an.";
+ const t=`Anfrage Parkplan\nPark: ${$("n").value||"-"}\nBausteine: ${names().join(", ")}\nWünsche: ${$("w").value||"-"}\n\nIhren aktuellen Plan senden wir als Anhang mit.`;
+ const ok=()=>$("st").textContent="Text kopiert. Fügen Sie ihn in eine E-Mail ein und hängen Sie Ihren Plan an.";
  const fb=()=>{$("w").value=t;$("w").select();$("st").textContent="Der Text steht im Feld. Bitte kopieren Sie ihn von dort."};
  try{navigator.clipboard.writeText(t).then(ok,fb)}catch(_){fb()}});
-$("yr").textContent=new Date().getFullYear();
 </script>
+
 </body>
 </html>
