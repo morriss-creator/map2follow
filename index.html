@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html><html lang="de"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Map2follow</title>
-
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -72,6 +68,8 @@ svg.map{display:block;width:100%;height:auto}
 .contact .btn.pri{border-color:var(--accent);color:#fff}
 .status{font-size:14px;margin-top:8px;min-height:20px}
 footer{padding-block:28px 40px;color:var(--mute);font-size:14px}
+.legal{padding-block:28px 0;max-width:760px;font-size:15px;color:var(--mute)}.legal h2{font-size:22px;margin-bottom:10px;color:var(--ink)}.legal p{margin-top:10px}.legal mark{background:#ffe9a8;color:#000;padding:0 3px;border-radius:3px}footer a{color:inherit;margin-inline-start:14px}
+
 @media (max-width:860px){.stage{grid-template-columns:minmax(0,1fr)}.list{max-height:none}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
@@ -154,8 +152,6 @@ svg.old .pin .lab{font:400 10.5px var(--body);fill:#33423b;stroke:none}
 @media (max-width:600px){.rpin{width:28px;height:28px;font-size:13px}}
 </style>
 
-</head>
-<body>
 <div class="w">
 <header>
   <div class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#ff5a3c"/><path d="M7 21 C11 9 15 23 19 12 S25 14 25 14" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-dasharray="1 5"/><circle cx="25" cy="14" r="3" fill="#ffc43d"/></svg>Map2follow</div>
@@ -244,19 +240,28 @@ svg.old .pin .lab{font:400 10.5px var(--body);fill:#33423b;stroke:none}
   <div class="contact">
     <div>
       <h2>Zeigen Sie uns Ihren Plan. Wir zeigen Ihnen das Upgrade.</h2>
-      <p style="margin-top:14px">Die Anfrage ist unverbindlich. Beschreiben Sie kurz, was verbessert oder neu gemacht werden soll, und senden Sie uns den Text zusammen mit Ihrem aktuellen Plan per E-Mail.</p>
+      <p style="margin-top:14px">Die Anfrage ist unverbindlich. Beschreiben Sie kurz, was verbessert oder neu gemacht werden soll, und senden Sie uns die Anfrage direkt. Sie öffnet sich als E-Mail-Entwurf, so können Sie Ihren aktuellen Plan anhängen.</p>
       <p style="margin-top:14px"><strong>E-Mail:</strong> map2follow@gmail.com<br><strong>Telefon:</strong> +41 77 232 93 94</p>
     </div>
     <form id="f">
       <label for="n">Name des Parks</label><input id="n" autocomplete="organization">
+      <label for="e">Ihre E-Mail</label><input id="e" type="email" required autocomplete="email">
       <label for="w">Ihre Wünsche</label><textarea id="w" rows="4" placeholder="Zum Beispiel: Plan modernisieren, vier Jahreszeiten, zusätzlich auf Englisch"></textarea>
-      <button class="btn pri" type="submit">Anfragetext kopieren</button>
+      <button class="btn pri" type="submit">Anfrage senden</button>
       <div class="status" id="st" role="status"></div>
     </form>
   </div>
 </section>
 
-<footer>© Map2follow · Parkpläne für Freizeitparks und Attraktionsbetriebe</footer>
+<footer>© Map2follow · Parkpläne für Freizeitparks und Attraktionsbetriebe<a href="#impressum">Impressum</a><a href="#datenschutz">Datenschutz</a></footer>
+<section class="legal" id="impressum"><h2>Impressum</h2>
+<p><strong>Map2follow</strong><br>Betreiber: Morris Wernli<br>Staffeleggweg 9, 5033 Buchs AG, Schweiz<br>E-Mail: map2follow@gmail.com · Telefon: +41 77 232 93 94</p>
+<p>Trotz sorgfältiger Prüfung übernehmen wir keine Haftung für die Inhalte externer Links. Der Beispielpark ist frei erfunden, die genannten Orte sind fiktiv.</p></section>
+<section class="legal" id="datenschutz"><h2>Datenschutzerklärung</h2>
+<p><strong>Verantwortlich:</strong> wie im Impressum. Diese Erklärung richtet sich nach dem Schweizer Datenschutzgesetz (nDSG).</p>
+<p><strong>Anfragen.</strong> Wenn Sie uns eine Anfrage senden, bearbeiten wir Ihre Angaben (Name des Parks, E-Mail-Adresse, Wünsche, ggf. angehängter Plan) nur, um Ihre Anfrage zu beantworten und eine Offerte zu erstellen. Wir geben sie nicht an Dritte weiter.</p>
+<p><strong>Website.</strong> Diese Seite setzt keine Cookies und nutzt keine Analyse- oder Tracking-Dienste. Beim Aufruf verarbeitet der Hosting-Anbieter (GitHub Pages, GitHub Inc., USA) technisch bedingt Ihre IP-Adresse in Server-Logs. Schriften werden von Google Fonts geladen, dabei wird Ihre IP-Adresse an Google übermittelt.</p>
+<p><strong>Ihre Rechte.</strong> Sie können jederzeit Auskunft, Berichtigung oder Löschung Ihrer Daten verlangen: map2follow@gmail.com.</p></section>
 </div>
 
 <script>
@@ -524,12 +529,20 @@ sum();
 $("sumB").onclick=()=>{const w=$("w");w.value="Gewünschte Bausteine: "+names().join(", ")+".";
  const k=document.getElementById("kontakt");k.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion:reduce)").matches?"auto":"smooth",block:"center"});$("n").focus({preventScroll:true})};
 // contact
+// To send directly without opening an email program, put a form endpoint here
+// (e.g. a free Formspree or Web3Forms URL). Left empty, the request opens as an email draft.
+const FORM_ENDPOINT="";
+const TO="map2follow@gmail.com";
 $("f").addEventListener("submit",e=>{e.preventDefault();
- const t=`Anfrage Parkplan\nPark: ${$("n").value||"-"}\nBausteine: ${names().join(", ")}\nWünsche: ${$("w").value||"-"}\n\nIhren aktuellen Plan senden wir als Anhang mit.`;
- const ok=()=>$("st").textContent="Text kopiert. Fügen Sie ihn in eine E-Mail ein und hängen Sie Ihren Plan an.";
- const fb=()=>{$("w").value=t;$("w").select();$("st").textContent="Der Text steht im Feld. Bitte kopieren Sie ihn von dort."};
- try{navigator.clipboard.writeText(t).then(ok,fb)}catch(_){fb()}});
+ const t=`Anfrage Parkplan\nPark: ${$("n").value||"-"}\nKontakt: ${$("e").value||"-"}\nBausteine: ${names().join(", ")}\nWünsche: ${$("w").value||"-"}\n\nIhren aktuellen Plan senden wir als Anhang mit.`;
+ const st=$("st");
+ if(FORM_ENDPOINT){
+  fetch(FORM_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({park:$("n").value,email:$("e").value,message:t})})
+   .then(r=>{if(!r.ok)throw 0;st.textContent="Vielen Dank, Ihre Anfrage wurde gesendet. Wir melden uns bei Ihnen.";$("f").reset()}).catch(()=>{st.textContent="Senden fehlgeschlagen. Bitte schreiben Sie uns an map2follow@gmail.com."});
+  return}
+ try{navigator.clipboard.writeText(t).catch(()=>{})}catch(_){}
+ st.textContent="Ihr E-Mail-Programm öffnet sich mit der Anfrage. Bitte hängen Sie Ihren aktuellen Plan an und senden Sie sie ab. Der Text wurde auch kopiert.";
+ location.href="mailto:"+TO+"?subject="+encodeURIComponent("Anfrage Parkplan: "+($("n").value||""))+"&body="+encodeURIComponent(t)});
 </script>
 
-</body>
-</html>
+</body></html>
